@@ -16,14 +16,14 @@ In section introduces the classes and properties used to represent Textual Herit
     title, subtitle, abstract, name, language, genre, printing location, editor, year published, structure (e.g. a collection has several editions,
     a volume has several pages), et al.</p>
 
-<p><a href="#fig1">Figure 1</a> highlights the key terms used to describe bibliographic metadata. <a href="">Work</a>
+<p><a href="#fig1">Figure 1</a> highlights the key terms used to describe bibliographic metadata. <a href="#Work">Work</a>
     (equivalent to <a href="http://schema.org/CreativeWork">schema:CreativeWork</a>) is the core class representing "The most generic kind of creative work"
     (<a href="http://schema.org/CreativeWork">schema:CreativeWork</a>). It is mainly used for Textual Heritage here. The type of
     Textual Heritage can be expressed by defining it as a specific <a href="https://www.w3.org/TR/owl-ref/#subClassOf-def">subclass</a> of Work.
     The metadata is expressed through data properties and object properties whose domain is Work, subclass of Work, or
-    superclass of Work - <a href="https://w3id.org/hto#EntityWithProvenance">EntityWithProvenance</a> (equivalent to <a href="">prov:Entity</a>).
+    superclass of Work - <a href="#EntityWithProvenance">EntityWithProvenance</a> (equivalent to <a href="#http://www.w3.org/ns/prov#Entity">prov:Entity</a>).
     Taking advantage of ontology reuse, properties not included in HTO, but documented for schema:CreativeWork can be utilised as well.
-    The structure of resource is described using a chain of <a href="https://w3id.org/hto#hadMember">hadMember</a> property.
+    The structure of resource is described using a chain of <a href="#hadMember">hadMember</a> property.
     For example, a WorkCollection <em>W1</em> hadMember Edition <em>E1</em>, <em>E1</em> as WorkCollection hadMember
     Volume <em>V1</em>.
 </p>
@@ -109,18 +109,18 @@ In section introduces the classes and properties used to represent Textual Herit
 
 <p>
     The relation between Work and Concept can be viewed in two ways. From the perspective of a Work, it could contain multiple concept records,
-    we call such a record as <a href="https://w3id.org/hto#InternalRecord">InternalRecord</a> (a record which was mentioned or described  in a work),
-    which is subclass of <a href="https://w3id.org/hto#ConceptRecord">ConceptRecord</a>, and some concept records could represent (<a href="https://w3id.org/hto#wasConceptRecordOf">wasConceptRecordOf</a>, the
-    <a href="https://www.w3.org/TR/owl-ref/#inverseOf-def">inverseOf</a> <a href="https://w3id.org/hto#hadConceptRecord">hadConceptRecord</a>) the
-    same <a href="https://w3id.org/hto#Concept">Concept</a>. If putting it another way around, a Concept could have multiple
+    we call such a record as <a href="#InternalRecord">InternalRecord</a> (a record which was mentioned or described  in a work),
+    which is subclass of <a href="#ConceptRecord">ConceptRecord</a>, and some concept records could represent (<a href="#wasConceptRecordOf">wasConceptRecordOf</a>, the
+    <a href="https://www.w3.org/TR/owl-ref/#inverseOf-def">inverseOf</a> <a href="#hadConceptRecord">hadConceptRecord</a>) the
+    same <a href="#Concept">Concept</a>. If putting it another way around, a Concept could have multiple
     concept records, and each internal record, as a type of concept record, was recorded in a specific work.
 </p>
 
 <p>
-    <a href="https://w3id.org/hto#OriginalDescription">OriginalDescription</a> as a kind of <a href="https://w3id.org/hto#Description">Description</a>
-    is used to express the original content of a Work or an Internal Record using <a href="https://w3id.org/hto#hasOriginalDescription">hasOriginalDescription</a> property.
+    <a href="#OriginalDescription">OriginalDescription</a> as a kind of <a href="#Description">Description</a>
+    is used to express the original content of a Work or an Internal Record using <a href="#hasOriginalDescription">hasOriginalDescription</a> property.
     Note that a Work or an Internal Record could have multiple OriginalDescriptions extracted from different sources (EntityWithProvenance). These descriptions could have
-    different <a href="https://w3id.org/hto#TextQuality">TextQuality</a>. The provenance information of the description and sources can be easily expressed
+    different <a href="#TextQuality">TextQuality</a>. The provenance information of the description and sources can be easily expressed
     using terms in the <a href="https://www.w3.org/TR/prov-o/">PROV ontology</a>, since the core structure of this ontology
     is built on the base of core classes (prov:Agent, prov:Entity and prov:Activity) from PROV ontology.
 </p>
@@ -129,7 +129,7 @@ In section introduces the classes and properties used to represent Textual Herit
     As a example of flexible design, this ontology can represent the content of not only a specific internal record but also
     a work in general (shown in <a href="#fig3">Figure 3</a>). This is particularly useful when internal concept records in the work can not be automatically recognised due to limited
     information extraction methods. In addition, InternalRecord can be easily further specialised and expanded based on the level of information extraction.
-    For example, we have method to automatically extract articles from EB, so <a href="https://w3id.org/hto#TermRecord">TermRecord</a>
+    For example, we have method to automatically extract articles from EB, so <a href="#TermRecord">TermRecord</a>
     as a subclass of InternalRecord was defined to represent the article in EB. In the future, there might be tools to extract other types of
     records (such as people, place, et al.) highly accurately, and they should be defined as subclass of InternalRecord.
 </p>
@@ -157,10 +157,10 @@ In section introduces the classes and properties used to represent Textual Herit
     (accent in musical domain) and <span style="color: red">ex:linguistic_accent</span> (accent in linguistic domain).
     <span style="color: red">ex:musical_accent</span> has two term records: <span style="color: red">ex:musical_accent_eb_e5</span> recorded in
     a page in 5th edition (the relation between Page and Edition can be found in <a href="#fig1">Figure 1</a>), <span style="color: red">ex:musical_accent_eb_e7</span>
-    recorded in a page in 7th edition. These two similar records are linked through <a href="https://w3id.org/hto#similarTo">similarTo</a> property.
+    recorded in a page in 7th edition. These two similar records are linked through <a href="#similarTo">similarTo</a> property.
     <span style="color: red">ex:linguistic_accent</span> has one term record <span style="color: red">ex:linguistic_accent_eb_e7</span> which is recorded in
     another page in 7th edition. The description of this record mentioned another term record <span style="color: red">ex:reading_eb_e7</span>,
-    and they are linked through <a href="https://w3id.org/hto#refersTo">refersTo</a> property.
+    and they are linked through <a href="#refersTo">refersTo</a> property.
 </p>
 
 <p>
