@@ -2,7 +2,7 @@
 <https://w3id.org/hto#> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/hto/0.0.1> .
 <https://w3id.org/hto#> <http://purl.org/dc/elements/1.1/contributor> "Rosa Filgueira" .
 <https://w3id.org/hto#> <http://purl.org/dc/elements/1.1/creator> "Lilin Yu" .
-<https://w3id.org/hto#> <http://purl.org/dc/elements/1.1/description> "An ontology designed to represent heritage texual data"@en .
+<https://w3id.org/hto#> <http://purl.org/dc/elements/1.1/description> "An ontology designed to represent heritage textual data"@en .
 <https://w3id.org/hto#> <http://purl.org/dc/elements/1.1/license> <https://opensource.org/licenses/MIT> .
 <https://w3id.org/hto#> <http://purl.org/dc/elements/1.1/title> "Heritage Text Ontology" .
 <https://w3id.org/hto#> <http://purl.org/vocab/vann/preferredNamespacePrefix> "hto"@en .
@@ -94,13 +94,30 @@
 <http://www.w3.org/ns/prov#wasRevisionOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <http://www.w3.org/ns/prov#wasRevisionOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasDerivedFrom> .
 # 
+# https://w3id.org/hto#editor
+<https://w3id.org/hto#editor> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hto#editor> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/editor> .
+<https://w3id.org/hto#editor> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#Work> .
+<https://w3id.org/hto#editor> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#Person> .
+<https://w3id.org/hto#editor> <http://www.w3.org/2000/01/rdf-schema#comment> "The editor of a work"@en .
+<https://w3id.org/hto#editor> <http://www.w3.org/2000/01/rdf-schema#label> "editor"@en .
+# 
 # https://w3id.org/hto#endsAtPage
 <https://w3id.org/hto#endsAtPage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hto#endsAtPage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://w3id.org/hto#endsAtPage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#ConceptRecord> .
+<https://w3id.org/hto#endsAtPage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/hto#wasRecordedIn> .
+<https://w3id.org/hto#endsAtPage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/hto#endsAtPage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#InternalRecord> .
 <https://w3id.org/hto#endsAtPage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#Page> .
 <https://w3id.org/hto#endsAtPage> <http://www.w3.org/2000/01/rdf-schema#comment> "is the page in which the description of a concept record finishes."@en .
 <https://w3id.org/hto#endsAtPage> <http://www.w3.org/2000/01/rdf-schema#label> "ends at page"@en .
+# 
+# https://w3id.org/hto#hadConceptRecord
+<https://w3id.org/hto#hadConceptRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hto#hadConceptRecord> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/hto#hadConceptRecord> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/hto#wasConceptRecordOf> .
+<https://w3id.org/hto#hadConceptRecord> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#Concept> .
+<https://w3id.org/hto#hadConceptRecord> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#ConceptRecord> .
+<https://w3id.org/hto#hadConceptRecord> <http://www.w3.org/2000/01/rdf-schema#label> "had concept record"@en .
 # 
 # https://w3id.org/hto#hadMember
 <https://w3id.org/hto#hadMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -110,10 +127,19 @@
 <https://w3id.org/hto#hadMember> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/prov#Collection> .
 <https://w3id.org/hto#hadMember> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#EntityWithProvenance> .
 # 
-# https://w3id.org/hto#hasConceptRecord
-<https://w3id.org/hto#hasConceptRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hto#hasConceptRecord> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/2004/02/skos/core#Concept> .
-<https://w3id.org/hto#hasConceptRecord> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#ConceptRecord> .
+# https://w3id.org/hto#hadRecord
+<https://w3id.org/hto#hadRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hto#hadRecord> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/hto#wasRecordedIn> .
+# 
+# https://w3id.org/hto#hadSupplement
+<https://w3id.org/hto#hadSupplement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hto#hadSupplement> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/hto#hadSupplement> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/hto#wasSupplementOf> .
+<https://w3id.org/hto#hadSupplement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
+<https://w3id.org/hto#hadSupplement> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#Work> .
+<https://w3id.org/hto#hadSupplement> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#Work> .
+<https://w3id.org/hto#hadSupplement> <http://www.w3.org/2000/01/rdf-schema#comment> "A work had a another work as supplement"@en .
+<https://w3id.org/hto#hadSupplement> <http://www.w3.org/2000/01/rdf-schema#label> "had supplement"@en .
 # 
 # https://w3id.org/hto#hasDescription
 <https://w3id.org/hto#hasDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -131,7 +157,7 @@ _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Work> .
 _:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#ConceptRecord> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#InternalRecord> .
 _:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hto#hasOriginalDescription> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#OriginalDescription> .
@@ -142,11 +168,15 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/hto#hasSummary> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/hto#isSummaryOf> .
 <https://w3id.org/hto#hasSummary> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#OriginalDescription> .
 <https://w3id.org/hto#hasSummary> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#Summary> .
+<https://w3id.org/hto#hasSummary> <http://www.w3.org/2000/01/rdf-schema#comment> "A orginal descripton has a summary, to summarise original text content"@en .
+<https://w3id.org/hto#hasSummary> <http://www.w3.org/2000/01/rdf-schema#label> "has summary"@en .
 # 
 # https://w3id.org/hto#hasTextQuality
 <https://w3id.org/hto#hasTextQuality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hto#hasTextQuality> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#Description> .
 <https://w3id.org/hto#hasTextQuality> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#TextQuality> .
+<https://w3id.org/hto#hasTextQuality> <http://www.w3.org/2000/01/rdf-schema#comment> "a description has a certain lelvel of text quality. The difference in text quality can be the result of different digitalisation technologies when digitalisation process is involved to get the description."@en .
+<https://w3id.org/hto#hasTextQuality> <http://www.w3.org/2000/01/rdf-schema#label> "has text quality"@en .
 # 
 # https://w3id.org/hto#isDescriptionOf
 <https://w3id.org/hto#isDescriptionOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -155,24 +185,30 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/hto#isOriginalDescriptionOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hto#isOriginalDescriptionOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/hto#isDescriptionOf> .
 # 
-# https://w3id.org/hto#isQualityHigherThan
-<https://w3id.org/hto#isQualityHigherThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hto#isQualityHigherThan> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/hto#isQualityLowerThan> .
-<https://w3id.org/hto#isQualityHigherThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
-<https://w3id.org/hto#isQualityHigherThan> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#TextQuality> .
-<https://w3id.org/hto#isQualityHigherThan> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#TextQuality> .
-# 
-# https://w3id.org/hto#isQualityLowerThan
-<https://w3id.org/hto#isQualityLowerThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hto#isQualityLowerThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
-# 
 # https://w3id.org/hto#isSummaryOf
 <https://w3id.org/hto#isSummaryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hto#isSummaryOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/hto#isDescriptionOf> .
 # 
-# https://w3id.org/hto#isSupplementOf
-<https://w3id.org/hto#isSupplementOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hto#isSupplementOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/hto#supplementsTo> .
+# https://w3id.org/hto#isTextQualityHigherThan
+<https://w3id.org/hto#isTextQualityHigherThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hto#isTextQualityHigherThan> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/hto#isTextQualityHigherThan> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/hto#isTextQualityLowerThan> .
+<https://w3id.org/hto#isTextQualityHigherThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+<https://w3id.org/hto#isTextQualityHigherThan> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#TextQuality> .
+<https://w3id.org/hto#isTextQualityHigherThan> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#TextQuality> .
+# 
+# https://w3id.org/hto#isTextQualityLowerThan
+<https://w3id.org/hto#isTextQualityLowerThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hto#isTextQualityLowerThan> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
+<https://w3id.org/hto#isTextQualityLowerThan> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#TransitiveProperty> .
+# 
+# https://w3id.org/hto#permanentURL
+<https://w3id.org/hto#permanentURL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hto#permanentURL> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#atLocation> .
+<https://w3id.org/hto#permanentURL> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#EntityWithProvenance> .
+<https://w3id.org/hto#permanentURL> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#Location> .
+<https://w3id.org/hto#permanentURL> <http://www.w3.org/2000/01/rdf-schema#comment> "an permanent URL of an entity"@en .
+<https://w3id.org/hto#permanentURL> <http://www.w3.org/2000/01/rdf-schema#label> "permanent URL"@en .
 # 
 # https://w3id.org/hto#printedAt
 <https://w3id.org/hto#printedAt> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -180,20 +216,34 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/hto#printedAt> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#Work> .
 <https://w3id.org/hto#printedAt> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#Location> .
 <https://w3id.org/hto#printedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "physical location where a work was printed"@en .
-<https://w3id.org/hto#printedAt> <http://www.w3.org/2000/01/rdf-schema#comment> "printed at"@en .
+<https://w3id.org/hto#printedAt> <http://www.w3.org/2000/01/rdf-schema#label> "printed at"@en .
+# 
+# https://w3id.org/hto#publisher
+<https://w3id.org/hto#publisher> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hto#publisher> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/publisher> .
+<https://w3id.org/hto#publisher> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#Work> .
+<https://w3id.org/hto#publisher> <http://www.w3.org/2000/01/rdf-schema#range> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Person> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Organization> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/hto#publisher> <http://www.w3.org/2000/01/rdf-schema#comment> "The publisher of a work"@en .
+<https://w3id.org/hto#publisher> <http://www.w3.org/2000/01/rdf-schema#label> "publisher"@en .
 # 
 # https://w3id.org/hto#referencedBy
 <https://w3id.org/hto#referencedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/hto#referencedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/hto#refersTo> .
-<https://w3id.org/hto#referencedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/prov#Entity> .
-<https://w3id.org/hto#referencedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Entity> .
 <https://w3id.org/hto#referencedBy> <http://www.w3.org/2000/01/rdf-schema#comment> "an entity was refererenced by other entity"@en .
 <https://w3id.org/hto#referencedBy> <http://www.w3.org/2000/01/rdf-schema#label> "referenced by"@en .
 # 
 # https://w3id.org/hto#refersTo
 <https://w3id.org/hto#refersTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hto#refersTo> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/prov#Entity> .
-<https://w3id.org/hto#refersTo> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Entity> .
+<https://w3id.org/hto#refersTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#EntityWithProvenance> .
+<https://w3id.org/hto#refersTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#EntityWithProvenance> .
 <https://w3id.org/hto#refersTo> <http://www.w3.org/2000/01/rdf-schema#comment> "one entity refers to other entity."@en .
 <https://w3id.org/hto#refersTo> <http://www.w3.org/2000/01/rdf-schema#label> "refers to"@en .
 # 
@@ -203,7 +253,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/hto#shelfLocator> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#Work> .
 <https://w3id.org/hto#shelfLocator> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#Location> .
 <https://w3id.org/hto#shelfLocator> <http://www.w3.org/2000/01/rdf-schema#comment> "physical shelf locator where a work was placed"@en .
-<https://w3id.org/hto#shelfLocator> <http://www.w3.org/2000/01/rdf-schema#comment> "shelf locator"@en .
+<https://w3id.org/hto#shelfLocator> <http://www.w3.org/2000/01/rdf-schema#label> "shelf locator"@en .
 # 
 # https://w3id.org/hto#similarTo
 <https://w3id.org/hto#similarTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -211,28 +261,20 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/hto#similarTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#ConceptRecord> .
 <https://w3id.org/hto#similarTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#ConceptRecord> .
 <https://w3id.org/hto#similarTo> <http://www.w3.org/2000/01/rdf-schema#comment> "if one concept recortd is similar to concept record, it means their descriptions are semantically simlar."@en .
+<https://w3id.org/hto#similarTo> <http://www.w3.org/2000/01/rdf-schema#label> "siimilar to"@en .
 # 
 # https://w3id.org/hto#startsAtPage
 <https://w3id.org/hto#startsAtPage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hto#startsAtPage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
-<https://w3id.org/hto#startsAtPage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#ConceptRecord> .
+<https://w3id.org/hto#startsAtPage> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/hto#wasRecordedIn> .
+<https://w3id.org/hto#startsAtPage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#FunctionalProperty> .
+<https://w3id.org/hto#startsAtPage> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#InternalRecord> .
 <https://w3id.org/hto#startsAtPage> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#Page> .
 <https://w3id.org/hto#startsAtPage> <http://www.w3.org/2000/01/rdf-schema#comment> "is the page in which the description of a concept record starts."@en .
 <https://w3id.org/hto#startsAtPage> <http://www.w3.org/2000/01/rdf-schema#label> "starts at page"@en .
 # 
-# https://w3id.org/hto#supplementsTo
-<https://w3id.org/hto#supplementsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hto#supplementsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AsymmetricProperty> .
-<https://w3id.org/hto#supplementsTo> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#Work> .
-<https://w3id.org/hto#supplementsTo> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#Work> .
-<https://w3id.org/hto#supplementsTo> <http://www.w3.org/2000/01/rdf-schema#comment> "is the work that a supplement another work."@en .
-<https://w3id.org/hto#supplementsTo> <http://www.w3.org/2000/01/rdf-schema#label> "supplements to"@en .
-# 
-# https://w3id.org/hto#wasEditedBy
-<https://w3id.org/hto#wasEditedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hto#wasEditedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasAttributedTo> .
-<https://w3id.org/hto#wasEditedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#EntityWithProvenance> .
-<https://w3id.org/hto#wasEditedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Agent> .
+# https://w3id.org/hto#wasConceptRecordOf
+<https://w3id.org/hto#wasConceptRecordOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hto#wasConceptRecordOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
 # 
 # https://w3id.org/hto#wasExtractedFrom
 <https://w3id.org/hto#wasExtractedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -243,11 +285,15 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://w3id.org/hto#wasMemberOf
 <https://w3id.org/hto#wasMemberOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 # 
-# https://w3id.org/hto#wasPublishedBy
-<https://w3id.org/hto#wasPublishedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/hto#wasPublishedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasAttributedTo> .
-<https://w3id.org/hto#wasPublishedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#EntityWithProvenance> .
-<https://w3id.org/hto#wasPublishedBy> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/ns/prov#Agent> .
+# https://w3id.org/hto#wasRecordedIn
+<https://w3id.org/hto#wasRecordedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hto#wasRecordedIn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/prov#wasDerivedFrom> .
+<https://w3id.org/hto#wasRecordedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#InternalRecord> .
+<https://w3id.org/hto#wasRecordedIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/hto#Work> .
+# 
+# https://w3id.org/hto#wasSupplementOf
+<https://w3id.org/hto#wasSupplementOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/hto#wasSupplementOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2002/07/owl#topObjectProperty> .
 # 
 # 
 # 
@@ -282,7 +328,6 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.w3.org/ns/prov#value
 <http://www.w3.org/ns/prov#value> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://www.w3.org/ns/prov#value> <http://www.w3.org/2000/01/rdf-schema#comment> "Provides a value that is a direct representation of an entity." .
 # 
 # http://xmlns.com/foaf/0.1/name
 <http://xmlns.com/foaf/0.1/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -301,6 +346,7 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/hto#birthYear> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#Person> .
 <https://w3id.org/hto#birthYear> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
 <https://w3id.org/hto#birthYear> <http://www.w3.org/2000/01/rdf-schema#comment> "Year of birth"@en .
+<https://w3id.org/hto#birthYear> <http://www.w3.org/2000/01/rdf-schema#label> "birth year"@en .
 # 
 # https://w3id.org/hto#deathYear
 <https://w3id.org/hto#deathYear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -341,15 +387,15 @@ _:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://w3id.org/hto#mmsid
 <https://w3id.org/hto#mmsid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <https://w3id.org/hto#mmsid> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/identifier> .
-<https://w3id.org/hto#mmsid> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid4 .
-_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid6 .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Series> .
-_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Edition> .
-_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/hto#mmsid> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Series> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Edition> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hto#mmsid> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/hto#mmsid> <http://www.w3.org/2000/01/rdf-schema#comment> "is the Metadata Management System identifier of an edition or series"@en .
 <https://w3id.org/hto#mmsid> <http://www.w3.org/2000/01/rdf-schema#label> "mmsid"@en .
@@ -367,7 +413,7 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/hto#note> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#TermRecord> .
 <https://w3id.org/hto#note> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/hto#note> <http://www.w3.org/2000/01/rdf-schema#comment> "Additonal description of a term record."@en .
-<https://w3id.org/hto#note> <http://www.w3.org/2000/01/rdf-schema#comment> "note"@en .
+<https://w3id.org/hto#note> <http://www.w3.org/2000/01/rdf-schema#label> "note"@en .
 # 
 # https://w3id.org/hto#number
 <https://w3id.org/hto#number> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -379,18 +425,10 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://w3id.org/hto#part
 <https://w3id.org/hto#part> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/hto#part> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/prov#Collection> .
+<https://w3id.org/hto#part> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#EntityWithProvenance> .
 <https://w3id.org/hto#part> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#int> .
 <https://w3id.org/hto#part> <http://www.w3.org/2000/01/rdf-schema#comment> "is the number representing the part of a collection"@en .
 <https://w3id.org/hto#part> <http://www.w3.org/2000/01/rdf-schema#label> "part" .
-# 
-# https://w3id.org/hto#permanentURL
-<https://w3id.org/hto#permanentURL> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/hto#permanentURL> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/identifier> .
-<https://w3id.org/hto#permanentURL> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#EntityWithProvenance> .
-<https://w3id.org/hto#permanentURL> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
-<https://w3id.org/hto#permanentURL> <http://www.w3.org/2000/01/rdf-schema#comment> "is the permanent URL of an entity."@en .
-<https://w3id.org/hto#permanentURL> <http://www.w3.org/2000/01/rdf-schema#label> "permanent URL"@en .
 # 
 # https://w3id.org/hto#physicalDescription
 <https://w3id.org/hto#physicalDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
@@ -401,14 +439,14 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://w3id.org/hto#position
 <https://w3id.org/hto#position> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/hto#position> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#ConceptRecord> .
+<https://w3id.org/hto#position> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#InternalRecord> .
 <https://w3id.org/hto#position> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#integer> .
-<https://w3id.org/hto#position> <http://www.w3.org/2000/01/rdf-schema#comment> "Number representing the position in which a concept record appears in a page."@en .
+<https://w3id.org/hto#position> <http://www.w3.org/2000/01/rdf-schema#comment> "Number representing the position in which a record appears in a work."@en .
 <https://w3id.org/hto#position> <http://www.w3.org/2000/01/rdf-schema#label> "position"@en .
 # 
 # https://w3id.org/hto#subtitle
 <https://w3id.org/hto#subtitle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/hto#subtitle> <http://www.w3.org/2000/01/rdf-schema#domain> <http://www.w3.org/ns/prov#Entity> .
+<https://w3id.org/hto#subtitle> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#Work> .
 <https://w3id.org/hto#subtitle> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/hto#subtitle> <http://www.w3.org/2000/01/rdf-schema#comment> "is the subtitle of a work."@en .
 <https://w3id.org/hto#subtitle> <http://www.w3.org/2000/01/rdf-schema#label> "subtitle"@en .
@@ -430,7 +468,7 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://w3id.org/hto#title
 <https://w3id.org/hto#title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/hto#title> <http://www.w3.org/2000/01/rdf-schema#domain> <http://schema.org/CreativeWork> .
+<https://w3id.org/hto#title> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/hto#Work> .
 <https://w3id.org/hto#title> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
 <https://w3id.org/hto#title> <http://www.w3.org/2000/01/rdf-schema#comment> "is the title of a work."@en .
 <https://w3id.org/hto#title> <http://www.w3.org/2000/01/rdf-schema#label> "title"@en .
@@ -458,12 +496,14 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # #################################################################
 # 
 # 
+# http://schema.org/Book
+<http://schema.org/Book> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://schema.org/Book> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#Work> .
+# 
 # http://schema.org/Collection
 <http://schema.org/Collection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://schema.org/Collection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Collection> .
-<http://schema.org/Collection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#Work> .
-<http://schema.org/Collection> <http://www.w3.org/2000/01/rdf-schema#comment> "\"A collection of items, e.g. creative works or products.\" (shema:Collection)"@en .
-<http://schema.org/Collection> <http://www.w3.org/2000/01/rdf-schema#label> "Collection"@en .
+<http://schema.org/Collection> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/hto#WorkCollection> .
+<http://schema.org/Collection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://schema.org/CreativeWork> .
 # 
 # http://schema.org/CreativeWork
 <http://schema.org/CreativeWork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -518,8 +558,7 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.w3.org/2004/02/skos/core#Concept
 <http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2002/07/owl#disjointWith> <http://www.w3.org/ns/prov#Entity> .
-<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2000/01/rdf-schema#comment> "A SKOS concept can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive. The notion of a SKOS concept is used to refer to specific ideas or meanings established within a knowledge organization system and describe their conceptual structure." .
+<http://www.w3.org/2004/02/skos/core#Concept> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/hto#Concept> .
 # 
 # http://www.w3.org/ns/prov#Activity
 <http://www.w3.org/ns/prov#Activity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -529,8 +568,6 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # http://www.w3.org/ns/prov#Agent
 <http://www.w3.org/ns/prov#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<http://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity."@en .
-<http://www.w3.org/ns/prov#Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Agent"@en .
 # 
 # http://www.w3.org/ns/prov#Collection
 <http://www.w3.org/ns/prov#Collection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -540,27 +577,20 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # http://www.w3.org/ns/prov#Entity
 <http://www.w3.org/ns/prov#Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.w3.org/ns/prov#Entity> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/hto#EntityWithProvenance> .
-<http://www.w3.org/ns/prov#Entity> <http://www.w3.org/2000/01/rdf-schema#comment> "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary." .
 # 
 # http://www.w3.org/ns/prov#Location
 <http://www.w3.org/ns/prov#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.w3.org/ns/prov#Location> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/hto#Location> .
-<http://www.w3.org/ns/prov#Location> <http://www.w3.org/2000/01/rdf-schema#comment> "A location can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth." .
-<http://www.w3.org/ns/prov#Location> <http://www.w3.org/2000/01/rdf-schema#label> "Location"@en .
 # 
 # http://www.w3.org/ns/prov#Organization
 <http://www.w3.org/ns/prov#Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.w3.org/ns/prov#Organization> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/hto#Organization> .
 <http://www.w3.org/ns/prov#Organization> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Agent> .
-<http://www.w3.org/ns/prov#Organization> <http://www.w3.org/2000/01/rdf-schema#comment> "An organization is a social or legal institution such as a company, society, etc."@en .
-<http://www.w3.org/ns/prov#Organization> <http://www.w3.org/2000/01/rdf-schema#label> "Organization"@en .
 # 
 # http://www.w3.org/ns/prov#Person
 <http://www.w3.org/ns/prov#Person> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://www.w3.org/ns/prov#Person> <http://www.w3.org/2002/07/owl#equivalentClass> <https://w3id.org/hto#Person> .
 <http://www.w3.org/ns/prov#Person> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Agent> .
-<http://www.w3.org/ns/prov#Person> <http://www.w3.org/2000/01/rdf-schema#comment> "is a person"@en .
-<http://www.w3.org/ns/prov#Person> <http://www.w3.org/2000/01/rdf-schema#label> "Person"@en .
 # 
 # http://www.w3.org/ns/prov#SoftwareAgent
 <http://www.w3.org/ns/prov#SoftwareAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -575,15 +605,15 @@ _:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://w3id.org/hto#Agent
 <https://w3id.org/hto#Agent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hto#Agent> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid7 .
-_:genid7 <http://www.w3.org/2002/07/owl#unionOf> _:genid9 .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/prov#Agent> .
-_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> .
-_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/hto#Agent> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#unionOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/prov#Agent> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.cidoc-crm.org/cidoc-crm/E39_Actor> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hto#Agent> <http://www.w3.org/2000/01/rdf-schema#comment> "An agent is something that bears some form of responsibility for some actions. Note that it does not have to be people, it can be tools, such as software as well."@en .
 <https://w3id.org/hto#Agent> <http://www.w3.org/2000/01/rdf-schema#label> "Agent"@en .
 # 
@@ -591,11 +621,13 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/hto#ArticleTermRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hto#ArticleTermRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#TermRecord> .
 <https://w3id.org/hto#ArticleTermRecord> <http://www.w3.org/2000/01/rdf-schema#comment> "any term record that is not a topic record"@en .
+<https://w3id.org/hto#ArticleTermRecord> <http://www.w3.org/2000/01/rdf-schema#label> "Article Term Record"@en .
 # 
-# https://w3id.org/hto#Book
-<https://w3id.org/hto#Book> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hto#Book> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#Work> .
-<https://w3id.org/hto#Book> <http://www.w3.org/2000/01/rdf-schema#comment> "is a book"@en .
+# https://w3id.org/hto#Concept
+<https://w3id.org/hto#Concept> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/hto#Concept> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/hto#EntityWithProvenance> .
+<https://w3id.org/hto#Concept> <http://www.w3.org/2000/01/rdf-schema#comment> "A concept \"can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive.\" (schema:Concept). The concept in this ontology mainly focuses on any idea or notion which can have a record."@en .
+<https://w3id.org/hto#Concept> <http://www.w3.org/2000/01/rdf-schema#label> "Concept"@en .
 # 
 # https://w3id.org/hto#ConceptRecord
 <https://w3id.org/hto#ConceptRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -629,7 +661,8 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://w3id.org/hto#ExternalRecord
 <https://w3id.org/hto#ExternalRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hto#ExternalRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#ConceptRecord> .
-<https://w3id.org/hto#ExternalRecord> <http://www.w3.org/2000/01/rdf-schema#comment> "Record from external providers" .
+<https://w3id.org/hto#ExternalRecord> <http://www.w3.org/2000/01/rdf-schema#comment> "Record which is a not internal record. This class used to represent external record from external data providers, such as wikidata."@en .
+<https://w3id.org/hto#ExternalRecord> <http://www.w3.org/2000/01/rdf-schema#label> "External Record"@en .
 # 
 # https://w3id.org/hto#Group
 <https://w3id.org/hto#Group> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -642,6 +675,20 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 <https://w3id.org/hto#InformationResource> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#PropositionalResource> .
 <https://w3id.org/hto#InformationResource> <http://www.w3.org/2000/01/rdf-schema#comment> "This class comprises  \"identifiable immaterial items, such as poems, jokes, data sets, images, texts, multimedia objects, procedural prescriptions, computer program code, algorithm or mathematical formulae, that have an objectively recognizable structure and are documented as single units.\" (E73 Information Object in CIDOC CRM)"@en .
 <https://w3id.org/hto#InformationResource> <http://www.w3.org/2000/01/rdf-schema#label> "Information Resource"@en .
+# 
+# https://w3id.org/hto#InternalRecord
+<https://w3id.org/hto#InternalRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/hto#InternalRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#ConceptRecord> .
+<https://w3id.org/hto#InternalRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/hto#OriginalDescription> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hto#hasOriginalDescription> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/hto#InternalRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/hto#Work> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hto#wasRecordedIn> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/hto#InternalRecord> <http://www.w3.org/2000/01/rdf-schema#comment> "this class comprises a record which was mentioned or described  in a work"@en .
+<https://w3id.org/hto#InternalRecord> <http://www.w3.org/2000/01/rdf-schema#label> "Internal Record"@en .
 # 
 # https://w3id.org/hto#Location
 <https://w3id.org/hto#Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -657,6 +704,11 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://w3id.org/hto#OriginalDescription
 <https://w3id.org/hto#OriginalDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hto#OriginalDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#Description> .
+<https://w3id.org/hto#OriginalDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/hto#TextQuality> .
+_:genid15 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hto#hasTextQuality> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/hto#OriginalDescription> <http://www.w3.org/2002/07/owl#disjointWith> <https://w3id.org/hto#Summary> .
 <https://w3id.org/hto#OriginalDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "This class comprises original content of an texual entity, such as the text content of a page, or description of a term."@en .
 <https://w3id.org/hto#OriginalDescription> <http://www.w3.org/2000/01/rdf-schema#label> "Original Description"@en .
@@ -664,7 +716,11 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # https://w3id.org/hto#Page
 <https://w3id.org/hto#Page> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hto#Page> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#Work> .
-<https://w3id.org/hto#Page> <http://www.w3.org/2000/01/rdf-schema#comment> "is an page"@en .
+<https://w3id.org/hto#Page> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/hto#Work> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hto#wasMemberOf> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/hto#Page> <http://www.w3.org/2000/01/rdf-schema#comment> "is an page of a work"@en .
 <https://w3id.org/hto#Page> <http://www.w3.org/2000/01/rdf-schema#label> "Page"@en .
 # 
 # https://w3id.org/hto#Person
@@ -681,13 +737,15 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://w3id.org/hto#Series
 <https://w3id.org/hto#Series> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hto#Series> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#Work> .
+<https://w3id.org/hto#Series> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#WorkCollection> .
 <https://w3id.org/hto#Series> <http://www.w3.org/2000/01/rdf-schema#comment> "A series is a sequence or grouping of related works or items that share common characteristics, themes, or connections. These works are often linked together by a common thread, storyline, characters, or overarching concept." .
 <https://w3id.org/hto#Series> <http://www.w3.org/2000/01/rdf-schema#label> "Series" .
 # 
 # https://w3id.org/hto#SoftwareAgent
 <https://w3id.org/hto#SoftwareAgent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hto#SoftwareAgent> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#Agent> .
+<https://w3id.org/hto#SoftwareAgent> <http://www.w3.org/2000/01/rdf-schema#comment> "\"A software agent is running software.\" (prov:SoftwareAgent)"@en .
+<https://w3id.org/hto#SoftwareAgent> <http://www.w3.org/2000/01/rdf-schema#label> "Software Agent"@en .
 # 
 # https://w3id.org/hto#Summary
 <https://w3id.org/hto#Summary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -697,35 +755,50 @@ _:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/20
 # 
 # https://w3id.org/hto#TermRecord
 <https://w3id.org/hto#TermRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hto#TermRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#ConceptRecord> .
+<https://w3id.org/hto#TermRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#InternalRecord> .
+<https://w3id.org/hto#TermRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/hto#Page> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hto#wasMemberOf> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/hto#TermRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/hto#Page> .
+_:genid18 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hto#endsAtPage> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/hto#TermRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/hto#Page> .
+_:genid19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hto#startsAtPage> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
 <https://w3id.org/hto#TermRecord> <http://www.w3.org/2000/01/rdf-schema#comment> "is the article in the encyclopaedia, or an entry in a dictionary."@en .
 <https://w3id.org/hto#TermRecord> <http://www.w3.org/2000/01/rdf-schema#label> "Term Record"@en .
 # 
 # https://w3id.org/hto#TextQuality
 <https://w3id.org/hto#TextQuality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/hto#TextQuality> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid10 .
-_:genid10 <http://www.w3.org/2002/07/owl#oneOf> _:genid14 .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid11 .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Moderate> .
-_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Low> .
-_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#High> .
-_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Clean> .
-_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/hto#TextQuality> <http://www.w3.org/2002/07/owl#equivalentClass> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#oneOf> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Moderate> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Low> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#High> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Clean> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hto#TextQuality> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit> .
 <https://w3id.org/hto#TextQuality> <http://www.w3.org/2000/01/rdf-schema#comment> "This class comprises the categories of text quality. Note that, the measurement of text quality might be better represented in future version, now it is described within limited text quality instances (Low, Moderate, High, Clean)."@en .
-<https://w3id.org/hto#TextQuality> <http://www.w3.org/2000/01/rdf-schema#label> "Text quality"@en .
+<https://w3id.org/hto#TextQuality> <http://www.w3.org/2000/01/rdf-schema#label> "Text Quality"@en .
 # 
 # https://w3id.org/hto#TopicTermRecord
 <https://w3id.org/hto#TopicTermRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hto#TopicTermRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#TermRecord> .
 <https://w3id.org/hto#TopicTermRecord> <http://www.w3.org/2000/01/rdf-schema#comment> "is article which has some description which covers more than three whole pages"@en .
+<https://w3id.org/hto#TopicTermRecord> <http://www.w3.org/2000/01/rdf-schema#label> "Topic Term Record"@en .
 # 
 # https://w3id.org/hto#Type
 <https://w3id.org/hto#Type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -735,7 +808,22 @@ _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/hto#Volume
 <https://w3id.org/hto#Volume> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/hto#Volume> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#Work> .
-<https://w3id.org/hto#Volume> <http://www.w3.org/2000/01/rdf-schema#comment> "a work forming part of an edition or series."@en .
+<https://w3id.org/hto#Volume> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#allValuesFrom> _:genid26 .
+_:genid26 <http://www.w3.org/2002/07/owl#unionOf> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Series> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/hto#Edition> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://schema.org/Collection> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/hto#wasMemberOf> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/hto#Volume> <http://www.w3.org/2000/01/rdf-schema#comment> "a work forming part of an edition, a series, or a collection ."@en .
 <https://w3id.org/hto#Volume> <http://www.w3.org/2000/01/rdf-schema#label> "Volume"@en .
 # 
 # https://w3id.org/hto#Work
@@ -743,6 +831,13 @@ _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/hto#Work> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#PropositionalResource> .
 <https://w3id.org/hto#Work> <http://www.w3.org/2000/01/rdf-schema#comment> "The most generic kind of creative work, including books, movies, photographs, software programs, etc. (schema:CreativeWork)"@en .
 <https://w3id.org/hto#Work> <http://www.w3.org/2000/01/rdf-schema#label> "Work"@en .
+# 
+# https://w3id.org/hto#WorkCollection
+<https://w3id.org/hto#WorkCollection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/hto#WorkCollection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/prov#Collection> .
+<https://w3id.org/hto#WorkCollection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/hto#Work> .
+<https://w3id.org/hto#WorkCollection> <http://www.w3.org/2000/01/rdf-schema#comment> "\"A collection of items, e.g. creative works or products\" (shema:Collection)"@en .
+<https://w3id.org/hto#WorkCollection> <http://www.w3.org/2000/01/rdf-schema#label> "Work Collection"@en .
 # 
 # 
 # 
@@ -755,11 +850,9 @@ _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/hto#Clean
 <https://w3id.org/hto#Clean> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/hto#Clean> <https://w3id.org/hto#isQualityHigherThan> <https://w3id.org/hto#High> .
 # 
 # https://w3id.org/hto#High
 <https://w3id.org/hto#High> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
-<https://w3id.org/hto#High> <https://w3id.org/hto#isQualityHigherThan> <https://w3id.org/hto#Moderate> .
 # 
 # https://w3id.org/hto#Low
 <https://w3id.org/hto#Low> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
@@ -767,27 +860,5 @@ _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # https://w3id.org/hto#Moderate
 <https://w3id.org/hto#Moderate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/hto#Moderate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/hto#TextQuality> .
-<https://w3id.org/hto#Moderate> <https://w3id.org/hto#isQualityHigherThan> <https://w3id.org/hto#Low> .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    General axioms
-# #
-# #################################################################
-# 
-# 
-_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AllDisjointClasses> .
-_:genid15 <http://www.w3.org/2002/07/owl#members> _:genid18 .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/prov#Entity> .
-_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/prov#Agent> .
-_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.w3.org/ns/prov#Activity> .
-_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
 # 
 # Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

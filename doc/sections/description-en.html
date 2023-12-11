@@ -1,0 +1,189 @@
+<h2 id="desc" class="list">Heritage Text Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+
+In section introduces the classes and properties used to represent Textual Heritage from the following aspects:
+
+<ul>
+    <li><a href="#desc-biblio">Bibliographic Metadata</a></li>
+    <li><a href="#desc-content">Textual Content</a></li>
+</ul>
+
+
+<h3 id="desc-biblio">Bibliographical Metadata</h3>
+
+<p>Bibliographic Metadata here mainly contains elements used to identify and retrieve a specific historical textual resource.
+    To be more specific, bibliographic metadata can be described in HTO includes the type (Edition, Series, Volume...) of the heritage resource,
+    title, subtitle, abstract, name, language, genre, printing location, editor, year published, structure (e.g. a collection has several editions,
+    a volume has several pages), et al.</p>
+
+<p><a href="#fig1">Figure 1</a> highlights the key terms used to describe bibliographic metadata. <a href="">Work</a>
+    (equivalent to <a href="http://schema.org/CreativeWork">schema:CreativeWork</a>) is the core class representing "The most generic kind of creative work"
+    (<a href="http://schema.org/CreativeWork">schema:CreativeWork</a>). It is mainly used for Textual Heritage here. The type of
+    Textual Heritage can be expressed by defining it as a specific <a href="https://www.w3.org/TR/owl-ref/#subClassOf-def">subclass</a> of Work.
+    The metadata is expressed through data properties and object properties whose domain is Work, subclass of Work, or
+    superclass of Work - <a href="https://w3id.org/hto#EntityWithProvenance">EntityWithProvenance</a> (equivalent to <a href="">prov:Entity</a>).
+    Taking advantage of ontology reuse, properties not included in HTO, but documented for schema:CreativeWork can be utilised as well.
+    The structure of resource is described using a chain of <a href="https://w3id.org/hto#hadMember">hadMember</a> property.
+    For example, a WorkCollection <em>W1</em> hadMember Edition <em>E1</em>, <em>E1</em> as WorkCollection hadMember
+    Volume <em>V1</em>.
+</p>
+<div style="text-align: center">
+   <figure>
+    <img
+            src="HTO_bibliographic_metadata.png"
+            alt="Diagram of Classes and Properties for Bibliographical Metadata"
+    >
+    <figcaption id="fig1">Figure 1. Classes and Properties for Bibliographical Metadata <br>
+        The diagrams in this document describes EntityWithProvenance as blue rectangle, <br>
+        Agent as orange oral, Location as green parallelogram, datatype as grey rectangle, <br>
+        property as arrow (arrow from range pointing to domain, note that arrow without text represents super-class property).
+    </figcaption>
+</figure>
+</div>
+
+<br>
+<p>
+    A example of using this ontology to represent bibliographic metadata for Encyclopaedia Britannica (EB) collection is shown
+    in <a href="#fig2">Figure 2</a>. In this example, the overall structure of the EB collection is pictured using hadMember property.
+    The collection <span style="color: red">ex:EncyclopaediaBritannic</span> hadMember edition <span style="color: red">ex:EBEdition7</span> (the seven edition of EB)
+    and a supplement edition (<span style="color: red">ex:EBEdition7Supplement</span>). <span style="color: red">ex:EBEdition7</span>
+    hadMember volume <span style="color: red">ex:EBE7Volume2</span>(the second volume of the seven edition of EB).
+    As shown in Figure 1, the domain of this property is prov:Collection, which means the instance which uses this property
+    (tail of the arrow) should be a prov:Collection. Similarly, instance which receives this relation (head of the arrow)
+    should a hto:EntityWithProvenance. Therefore, <span style="color: red">ex:EncyclopaediaBritannic</span>, <span style="color: red">ex:EBEdition7</span>,
+    <span style="color: red">ex:EBE7Volume2</span> are type of prov:Collection, and <span style="color: red">ex:EBEdition7Supplement</span>,
+    <span style="color: red">ex:EBEdition7</span>, <span style="color: red">ex:EBE7Volume2</span>, <span style="color: red">ex:EBE7Volume2page93</span>
+    are type of hto:EntityWithProvenance.
+</p>
+
+<p>
+    This example states that <span style="color: red">ex:EBEdition7</span> hadSupplement <span style="color: red">ex:EBEdition7Supplement</span>), that's to say, they
+    are both type of hto:Work, and they are not same resource since hadSupplement is <a href="https://www.w3.org/TR/owl2-syntax/#Asymmetric_Object_Properties">asymmetric</a>.
+    This example also shows that <span style="color: red">ex:EBEdition7</span> has two editors <span style="color: red">ex:StewartDugald</span> and
+    <span style="color: red">ex:LeslieJohn</span>.
+</p>
+
+<div style="text-align: center">
+   <figure>
+    <img
+            src="HTO_bibliographic_metadata_example.png"
+            alt="Example diagram of using HTO to represent bibliographic metadata for Encyclopaedia Britannica collection"
+    >
+    <figcaption id="fig2">Figure 2. Example of using HTO to represent bibliographic metadata for Encyclopaedia Britannica collection <br>
+        the namespace <em>ex</em> is just used as an example, and it could be any existing namespace.
+    </figcaption>
+</figure>
+</div>
+
+<h3 id="desc-content">Textual Content</h3>
+
+<p>Textual content here means the printed or handwritten text in a textual heritage. The knowledge hidden in the textual content
+    is essential to a wide range of researches. However, there are several problems remaining unsolved when it comes to digitalising
+    historical textual documents:
+
+    <ol>
+        <li>when their content was transcribed either manually or automatically via optical character recognition (OCR) or handwritten
+    text recognition (HTR), text quality of the content varies.</li>
+        <li>retrieving information on historical documents (such as identifying entity of interest in texts, and semantic relations among entities) is difficult.
+    It faces the challenges of domain heterogeneity, input noisiness, dynamics of language, and lack of resources (such as fine-tuned language models).</li>
+    </ol>
+
+    To accommodate these problems, this ontology are designed to:
+    <ol>
+        <li>
+            capture textual content extracted from sources provided by different data providers, along with the text quality, provenance information
+    about how the text was extracted and how sources are generated. This allows comparison among text with different qualities
+    as well as tools to generate the text, and possibly provides insight to clean the text.
+        </li>
+        <li>
+            be extendable and flexible to adopt new entity and relations which would be automatically identified from the textual
+    content in the future.
+        </li>
+    </ol>
+</p>
+
+<p>
+    <a href="#fig3">Figure 3</a> highlights the key terms to express the relations among historical work, concept from the work, and textual content
+    of the work or concept. It also reflects the design associated with above problems.
+</p>
+
+<p>
+    The relation between Work and Concept can be viewed in two ways. From the perspective of a Work, it could contain multiple concept records,
+    we call such a record as <a href="https://w3id.org/hto#InternalRecord">InternalRecord</a> (a record which was mentioned or described  in a work),
+    which is subclass of <a href="https://w3id.org/hto#ConceptRecord">ConceptRecord</a>, and some concept records could represent (<a href="https://w3id.org/hto#wasConceptRecordOf">wasConceptRecordOf</a>, the
+    <a href="https://www.w3.org/TR/owl-ref/#inverseOf-def">inverseOf</a> <a href="https://w3id.org/hto#hadConceptRecord">hadConceptRecord</a>) the
+    same <a href="https://w3id.org/hto#Concept">Concept</a>. If putting it another way around, a Concept could have multiple
+    concept records, and each internal record, as a type of concept record, was recorded in a specific work.
+</p>
+
+<p>
+    <a href="https://w3id.org/hto#OriginalDescription">OriginalDescription</a> as a kind of <a href="https://w3id.org/hto#Description">Description</a>
+    is used to express the original content of a Work or an Internal Record using <a href="https://w3id.org/hto#hasOriginalDescription">hasOriginalDescription</a> property.
+    Note that a Work or an Internal Record could have multiple OriginalDescriptions extracted from different sources (EntityWithProvenance). These descriptions could have
+    different <a href="https://w3id.org/hto#TextQuality">TextQuality</a>. The provenance information of the description and sources can be easily expressed
+    using terms in the <a href="https://www.w3.org/TR/prov-o/">PROV ontology</a>, since the core structure of this ontology
+    is built on the base of core classes (prov:Agent, prov:Entity and prov:Activity) from PROV ontology.
+</p>
+
+<p>
+    As a example of flexible design, this ontology can represent the content of not only a specific internal record but also
+    a work in general (shown in <a href="#fig3">Figure 3</a>). This is particularly useful when internal concept records in the work can not be automatically recognised due to limited
+    information extraction methods. In addition, InternalRecord can be easily further specialised and expanded based on the level of information extraction.
+    For example, we have method to automatically extract articles from EB, so <a href="https://w3id.org/hto#TermRecord">TermRecord</a>
+    as a subclass of InternalRecord was defined to represent the article in EB. In the future, there might be tools to extract other types of
+    records (such as people, place, et al.) highly accurately, and they should be defined as subclass of InternalRecord.
+</p>
+
+
+<div style="text-align: center">
+   <figure>
+    <img
+            src="HTO_textual_content.png"
+            alt="Diagram of Classes and Properties for Textual Content"
+    >
+    <figcaption id="fig3">Figure 4. Classes and Properties for  Textual Content<br>
+        The diagrams in this document describes EntityWithProvenance as blue rectangle, <br>
+        Agent as orange oral, Activity as purple hexagon, TextQuality as yellow trapezoid, <br>
+        Concept as pink pentagon, datatype as grey rectangle, <br>
+        property as arrow (arrow from range pointing to domain, note that arrow without text represents super-class property).
+    </figcaption>
+</figure>
+</div>
+
+<br>
+<p>
+    <a href="#fig4">Figure 4</a> shows a example of how to use HTO to represent the textual content and articles in
+    Encyclopaedia Britannic collection. In this example, two concepts are introduced: <span style="color: red">ex:musical_accent</span>
+    (accent in musical domain) and <span style="color: red">ex:linguistic_accent</span> (accent in linguistic domain).
+    <span style="color: red">ex:musical_accent</span> has two term records: <span style="color: red">ex:musical_accent_eb_e5</span> recorded in
+    a page in 5th edition (the relation between Page and Edition can be found in <a href="#fig1">Figure 1</a>), <span style="color: red">ex:musical_accent_eb_e7</span>
+    recorded in a page in 7th edition. These two similar records are linked through <a href="https://w3id.org/hto#similarTo">similarTo</a> property.
+    <span style="color: red">ex:linguistic_accent</span> has one term record <span style="color: red">ex:linguistic_accent_eb_e7</span> which is recorded in
+    another page in 7th edition. The description of this record mentioned another term record <span style="color: red">ex:reading_eb_e7</span>,
+    and they are linked through <a href="https://w3id.org/hto#refersTo">refersTo</a> property.
+</p>
+
+<p>
+    This example also shows that the term record <span style="color: red">ex:linguistic_accent_eb_e7</span> has two original descriptions:
+    <span style="color: red">ex:accent1_eb_definition_nls</span> (less clean text extracted from the source which is generated by agent2),
+    and <span style="color: red">ex:accent1_eb_definition_nckp</span> (more clean text extracted from the source which is generated by agent
+    <span style="color: red">ex:nckp</span> using the software agent <span style="color: red">ex:ocr_tool</span>).
+
+    Besides the original description for term records, this example also demonstrates the expression of textual content in the whole page.
+    The page <span style="color: red">ex:eb_e7_vx_pagey</span> has a original description <span style="color: red">ex:pagey_content</span>.
+</p>
+
+
+<div style="text-align: center">
+   <figure>
+    <img
+            src="HTO_textual_content_example.png"
+            alt="Example diagram of using HTO to represent textual content for Encyclopaedia Britannica collection"
+    >
+    <figcaption id="fig4">Figure 4. Example of using HTO to represent textual content for Encyclopaedia Britannica collection<br>
+        the namespace <em>ex</em> is just used as an example, and it could be any existing namespace.
+    </figcaption>
+</figure>
+</div>
+
+
