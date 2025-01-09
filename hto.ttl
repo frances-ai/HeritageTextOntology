@@ -472,6 +472,14 @@ hto:number rdf:type owl:DatatypeProperty ;
            rdfs:label "number"@en .
 
 
+###  https://w3id.org/hto#numberOfPages
+hto:numberOfPages rdf:type owl:DatatypeProperty ;
+                  rdfs:domain hto:Volume ;
+                  rdfs:range xsd:int ;
+                  rdfs:comment "The number of pages of a volume."@en ;
+                  rdfs:label "Number of Pages"@en .
+
+
 ###  https://w3id.org/hto#part
 hto:part rdf:type owl:DatatypeProperty ;
          rdfs:domain hto:EntityWithProvenance ;
@@ -541,34 +549,13 @@ hto:volumeId rdf:type owl:DatatypeProperty ;
 ###  https://w3id.org/hto#yearPublished
 hto:yearPublished rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf <http://schema.org/datePublished> ;
-                  rdfs:domain <http://schema.org/CreativeWork> ;
+                  rdfs:domain <https://schema.org/CreativeWork> ;
                   rdfs:range xsd:int .
 
 
 #################################################################
 #    Classes
 #################################################################
-
-###  http://schema.org/Book
-<http://schema.org/Book> rdf:type owl:Class ;
-                         rdfs:subClassOf hto:Work .
-
-
-###  http://schema.org/Collection
-<http://schema.org/Collection> rdf:type owl:Class ;
-                               owl:equivalentClass hto:WorkCollection ;
-                               rdfs:subClassOf <http://schema.org/CreativeWork> .
-
-
-###  http://schema.org/CreativeWork
-<http://schema.org/CreativeWork> rdf:type owl:Class ;
-                                 owl:equivalentClass hto:Work .
-
-
-###  http://schema.org/Person
-<http://schema.org/Person> rdf:type owl:Class ;
-                           owl:equivalentClass hto:Person .
-
 
 ###  http://www.cidoc-crm.org/cidoc-crm/E21_Person
 <http://www.cidoc-crm.org/cidoc-crm/E21_Person> rdf:type owl:Class ;
@@ -671,6 +658,27 @@ prov:Person rdf:type owl:Class ;
 prov:SoftwareAgent rdf:type owl:Class ;
                    owl:equivalentClass hto:SoftwareAgent ;
                    rdfs:subClassOf prov:Agent .
+
+
+###  https://schema.org/Book
+<https://schema.org/Book> rdf:type owl:Class ;
+                          rdfs:subClassOf hto:Work .
+
+
+###  https://schema.org/Collection
+<https://schema.org/Collection> rdf:type owl:Class ;
+                                owl:equivalentClass hto:WorkCollection ;
+                                rdfs:subClassOf <https://schema.org/CreativeWork> .
+
+
+###  https://schema.org/CreativeWork
+<https://schema.org/CreativeWork> rdf:type owl:Class ;
+                                  owl:equivalentClass hto:Work .
+
+
+###  https://schema.org/Person
+<https://schema.org/Person> rdf:type owl:Class ;
+                            owl:equivalentClass hto:Person .
 
 
 ###  https://w3id.org/hto#Activity
@@ -904,7 +912,7 @@ hto:Volume rdf:type owl:Class ;
                            [ rdf:type owl:Restriction ;
                              owl:onProperty hto:wasMemberOf ;
                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                 owl:unionOf ( <http://schema.org/Collection>
+                                                 owl:unionOf ( <https://schema.org/Collection>
                                                                hto:Edition
                                                                hto:Series
                                                              )
