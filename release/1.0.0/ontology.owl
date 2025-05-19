@@ -2,19 +2,21 @@
 <rdf:RDF xmlns="https://w3id.org/hto#"
      xml:base="https://w3id.org/hto"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:hto="https://w3id.org/hto#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:vann="http://purl.org/vocab/vann/">
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/hto#">
         <owl:versionIRI rdf:resource="https://w3id.org/hto/1.0.0"/>
         <dc:contributor>Rosa Filgueira</dc:contributor>
         <dc:creator>Lilin Yu</dc:creator>
         <dc:description xml:lang="en">An ontology designed to represent heritage textual data</dc:description>
-        <dc:license rdf:resource="https://opensource.org/licenses/MIT"/>
         <dc:title>Heritage Text Ontology</dc:title>
+        <terms:license rdf:resource="https://opensource.org/licenses/MIT"/>
         <vann:preferredNamespacePrefix xml:lang="en">hto</vann:preferredNamespacePrefix>
         <vann:preferredNamespaceUri rdf:resource="https://w3id.org/hto"/>
         <owl:backwardCompatibleWith rdf:resource="https://w3id.org/hto/0.0.2"/>
@@ -57,17 +59,17 @@
     
 
 
-    <!-- http://purl.org/dc/elements/1.1/license -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/license"/>
-    
-
-
     <!-- http://purl.org/dc/elements/1.1/title -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
     
 
 
@@ -116,6 +118,16 @@
     
 
 
+    <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
+
+
+    <rdfs:Datatype rdf:about="http://www.opengis.net/ont/geosparql#wktLiteral">
+        <vann:example>&quot;Point(-83.38 33.95)&quot;^^&lt;http://www.opengis.net/ont/geosparql#wktLiteral&gt;</vann:example>
+        <rdfs:comment xml:lang="en">A Well-known Text serialization of a Geometry object.</rdfs:comment>
+    </rdfs:Datatype>
+    
+
+
     <!-- http://www.w3.org/2001/XMLSchema#date -->
 
 
@@ -135,19 +147,57 @@
     
 
 
-    <!-- http://schema.org/editor -->
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P138_represents -->
 
 
-    <owl:ObjectProperty rdf:about="http://schema.org/editor">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    <owl:ObjectProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P138_represents">
+        <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation"/>
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://schema.org/publisher -->
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation -->
 
 
-    <owl:ObjectProperty rdf:about="http://schema.org/publisher"/>
+    <owl:ObjectProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P160_has_temporal_projection -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P160_has_temporal_projection">
+        <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P160i_is_temporal_projection_of"/>
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume"/>
+        <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+        <rdfs:comment xml:lang="en">This property describes the temporal projection of an instance of an E92 Spacetime Volume. The property P4 has time-span is the same as P160 has temporal projection if it is used to document an instance of E4 Period or any subclass of it.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P160i_is_temporal_projection_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P160i_is_temporal_projection_of"/>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P161_has_spatial_projection -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P161_has_spatial_projection">
+        <owl:inverseOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of"/>
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume"/>
+        <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of"/>
     
 
 
@@ -206,6 +256,20 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
         <rdfs:comment xml:lang="en">This property is used to link a Feature with a Geometry that represents its spatial extent. A given Feature may have many associated geometries. (geo:hasGeometry)</rdfs:comment>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#broader -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#broader"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#narrower -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2004/02/skos/core#narrower"/>
     
 
 
@@ -320,6 +384,15 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
     
 
 
+    <!-- https://schema.org/editor -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.org/editor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://schema.org/mentions -->
 
 
@@ -327,6 +400,13 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
         <rdfs:domain rdf:resource="https://schema.org/CreativeWork"/>
         <rdfs:comment xml:lang="en">Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept. (schema:mentions)</rdfs:comment>
     </owl:ObjectProperty>
+    
+
+
+    <!-- https://schema.org/publisher -->
+
+
+    <owl:ObjectProperty rdf:about="https://schema.org/publisher"/>
     
 
 
@@ -341,7 +421,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hto#editor">
-        <rdfs:subPropertyOf rdf:resource="http://schema.org/editor"/>
+        <rdfs:subPropertyOf rdf:resource="https://schema.org/editor"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#Work"/>
         <rdfs:range rdf:resource="https://w3id.org/hto#Person"/>
         <rdfs:comment xml:lang="en">The editor of a work</rdfs:comment>
@@ -354,7 +434,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hto#endsAtPage">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hto#wasRecordedIn"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#InternalRecord"/>
         <rdfs:range rdf:resource="https://w3id.org/hto#Page"/>
@@ -424,16 +504,6 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
     
 
 
-    <!-- https://w3id.org/hto#hasBroaderSubject -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/hto#hasBroaderSubject">
-        <owl:inverseOf rdf:resource="https://w3id.org/hto#hasNarrowerSubject"/>
-        <rdfs:label xml:lang="en">has broader subject</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/hto#hasDescription -->
 
 
@@ -456,19 +526,6 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
     
 
 
-    <!-- https://w3id.org/hto#hasNarrowerSubject -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/hto#hasNarrowerSubject">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/hto#Subject"/>
-        <rdfs:range rdf:resource="https://w3id.org/hto#Subject"/>
-        <rdfs:comment xml:lang="en">A property linking a subject to its more specific sub-topics.</rdfs:comment>
-        <rdfs:label xml:lang="en">has narrower subject</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://w3id.org/hto#hasOriginalDescription -->
 
 
@@ -484,6 +541,18 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/hto#OriginalDescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/hto#hasResourceType -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/hto#hasResourceType">
+        <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+        <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+        <rdfs:range rdf:resource="https://w3id.org/hto#ResourceType"/>
+        <rdfs:label xml:lang="en">has Resource Type</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -523,7 +592,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
         <owl:inverseOf rdf:resource="https://w3id.org/hto#isSubjectOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#Event"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#Work"/>
-        <rdfs:range rdf:resource="https://w3id.org/hto#Subject"/>
+        <rdfs:range rdf:resource="https://w3id.org/hto#Concept"/>
         <rdfs:comment xml:lang="en">A work or event is about some subject.</rdfs:comment>
         <rdfs:label xml:lang="en">is about</rdfs:label>
     </owl:ObjectProperty>
@@ -618,7 +687,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hto#publisher">
-        <rdfs:subPropertyOf rdf:resource="http://schema.org/publisher"/>
+        <rdfs:subPropertyOf rdf:resource="https://schema.org/publisher"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#Work"/>
         <rdfs:range>
             <owl:Class>
@@ -639,7 +708,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hto#referencedBy">
         <owl:inverseOf rdf:resource="https://w3id.org/hto#refersTo"/>
-        <rdfs:comment xml:lang="en">an entity was refererenced by other entity</rdfs:comment>
+        <rdfs:comment xml:lang="en">a thing was referenced by an entity</rdfs:comment>
         <rdfs:label xml:lang="en">referenced by</rdfs:label>
     </owl:ObjectProperty>
     
@@ -650,8 +719,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hto#refersTo">
         <rdfs:domain rdf:resource="https://w3id.org/hto#EntityWithProvenance"/>
-        <rdfs:range rdf:resource="https://w3id.org/hto#EntityWithProvenance"/>
-        <rdfs:comment xml:lang="en">one entity refers to other entity.</rdfs:comment>
+        <rdfs:comment xml:lang="en">one entity refers to another thing</rdfs:comment>
         <rdfs:label xml:lang="en">refers to</rdfs:label>
     </owl:ObjectProperty>
     
@@ -687,9 +755,19 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hto#startsAtPage">
-        <rdfs:subPropertyOf rdf:resource="https://w3id.org/hto#wasRecordedIn"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://w3id.org/hto#InternalRecord"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://schema.org/Article"/>
+                    <rdf:Description rdf:about="https://schema.org/PublicationIssue"/>
+                    <rdf:Description rdf:about="https://w3id.org/hto#Broadside"/>
+                    <rdf:Description rdf:about="https://w3id.org/hto#InternalRecord"/>
+                    <rdf:Description rdf:about="https://w3id.org/hto#Volume"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="https://w3id.org/hto#Page"/>
         <rdfs:comment xml:lang="en">is the page in which the description of a concept record starts.</rdfs:comment>
         <rdfs:label xml:lang="en">starts at page</rdfs:label>
@@ -728,7 +806,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:ObjectProperty rdf:about="https://w3id.org/hto#wasRecordedIn">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#InternalRecord"/>
         <rdfs:range rdf:resource="https://w3id.org/hto#Work"/>
     </owl:ObjectProperty>
@@ -756,57 +834,6 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
     
 
 
-    <!-- http://schema.org/abstract -->
-
-
-    <owl:DatatypeProperty rdf:about="http://schema.org/abstract"/>
-    
-
-
-    <!-- http://schema.org/birthDate -->
-
-
-    <owl:DatatypeProperty rdf:about="http://schema.org/birthDate"/>
-    
-
-
-    <!-- http://schema.org/datePublished -->
-
-
-    <owl:DatatypeProperty rdf:about="http://schema.org/datePublished">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://schema.org/deathDate -->
-
-
-    <owl:DatatypeProperty rdf:about="http://schema.org/deathDate"/>
-    
-
-
-    <!-- http://schema.org/genre -->
-
-
-    <owl:DatatypeProperty rdf:about="http://schema.org/genre"/>
-    
-
-
-    <!-- http://schema.org/identifier -->
-
-
-    <owl:DatatypeProperty rdf:about="http://schema.org/identifier"/>
-    
-
-
-    <!-- http://schema.org/inLanguage -->
-
-
-    <owl:DatatypeProperty rdf:about="http://schema.org/inLanguage"/>
-    
-
-
     <!-- http://www.opengis.net/ont/geosparql#asGeoJSON -->
 
 
@@ -816,6 +843,19 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
         <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#geoJSONLiteral"/>
         <rdfs:comment xml:lang="en">This property is defined to link a Geometry with its GeoJSON serialization. (geo:asGeoJSON)</rdfs:comment>
         <rdfs:label xml:lang="en">asGeoJSON</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#asWKT -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#asWKT">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+        <rdfs:comment xml:lang="en">The property geo:asWKT is defined to link a Geometry with its WKT serialization. (geo:asWKT)</rdfs:comment>
+        <rdfs:label xml:lang="en">asWKT</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -885,11 +925,74 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
     
 
 
+    <!-- https://schema.org/abstract -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/abstract">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/birthDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/birthDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/datePublished -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/datePublished">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/deathDate -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/deathDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/genre -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/genre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/identifier -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/identifier">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://schema.org/inLanguage -->
+
+
+    <owl:DatatypeProperty rdf:about="https://schema.org/inLanguage">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- https://w3id.org/hto#abstract -->
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/hto#abstract">
-        <rdfs:subPropertyOf rdf:resource="http://schema.org/abstract"/>
+        <rdfs:subPropertyOf rdf:resource="https://schema.org/abstract"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#Work"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">An abstract is a short description that summarizes a Work.</rdfs:comment>
@@ -902,7 +1005,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/hto#birthYear">
-        <rdfs:subPropertyOf rdf:resource="http://schema.org/birthDate"/>
+        <rdfs:subPropertyOf rdf:resource="https://schema.org/birthDate"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:comment xml:lang="en">Year of birth</rdfs:comment>
@@ -915,7 +1018,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/hto#deathYear">
-        <rdfs:subPropertyOf rdf:resource="http://schema.org/deathDate"/>
+        <rdfs:subPropertyOf rdf:resource="https://schema.org/deathDate"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#Person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
@@ -926,7 +1029,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/hto#genre">
-        <rdfs:subPropertyOf rdf:resource="http://schema.org/genre"/>
+        <rdfs:subPropertyOf rdf:resource="https://schema.org/genre"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#Work"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">is the genre of a work</rdfs:comment>
@@ -951,7 +1054,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/hto#language">
-        <rdfs:subPropertyOf rdf:resource="http://schema.org/inLanguage"/>
+        <rdfs:subPropertyOf rdf:resource="https://schema.org/inLanguage"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#Work"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">is the language used to write the work. For example, a book can be written in Chinese, a file can be written in Python.</rdfs:comment>
@@ -976,7 +1079,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/hto#mmsid">
-        <rdfs:subPropertyOf rdf:resource="http://schema.org/identifier"/>
+        <rdfs:subPropertyOf rdf:resource="https://schema.org/identifier"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1021,7 +1124,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/hto#number">
-        <rdfs:subPropertyOf rdf:resource="http://schema.org/identifier"/>
+        <rdfs:subPropertyOf rdf:resource="https://schema.org/identifier"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#EntityWithProvenance"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
         <rdfs:comment xml:lang="en">is the number of an entity</rdfs:comment>
@@ -1131,7 +1234,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/hto#volumeId">
-        <rdfs:subPropertyOf rdf:resource="http://schema.org/identifier"/>
+        <rdfs:subPropertyOf rdf:resource="https://schema.org/identifier"/>
         <rdfs:domain rdf:resource="https://w3id.org/hto#Volume"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">is the identifier of a volume.</rdfs:comment>
@@ -1144,7 +1247,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
 
     <owl:DatatypeProperty rdf:about="https://w3id.org/hto#yearPublished">
-        <rdfs:subPropertyOf rdf:resource="http://schema.org/datePublished"/>
+        <rdfs:subPropertyOf rdf:resource="https://schema.org/datePublished"/>
         <rdfs:domain rdf:resource="https://schema.org/CreativeWork"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
@@ -1182,6 +1285,15 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
     
 
 
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item -->
+
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.cidoc-crm.org/cidoc-crm/E39_Actor -->
 
 
@@ -1189,11 +1301,30 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
     
 
 
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span -->
+
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span">
+        <vann:example xml:lang="en">* 1961
+* From 12-17-1993 to 12-8-1996</vann:example>
+        <rdfs:comment xml:lang="en">This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration.
+
+Instances of E52 Time-Span have no semantic connotations about phenomena happening within the temporal extent they represent. They do not convey any meaning other than a positioning on the “time-line” of chronology. The actual extent of an instance of E52 Time-Span can be approximated by properties of E52 Time-Span giving inner and outer bounds in the form of dates (instances of E61 Time Primitive). Comparing knowledge about time-spans is fundamental for chronological reasoning.
+
+Some instances of E52 Time-Span may be defined as the actual, in principle observable, temporal extent of instances of E2 Temporal Entity via the property P4 has time-span (is time-span of): E52 Time-Span. They constitute phenomenal time-spans as defined in CRMgeo (Doerr &amp; Hiebel 2013). Since our knowledge of history is imperfect and physical phenomena are fuzzy in nature, the extent of phenomenal time-spans can only be described in approximation. An extreme case of approximation, might, for example, define an instance of E52 Time-Span having unknown beginning, end and duration. It may, nevertheless, be associated with other descriptions by which we can infer knowledge about it, such as in relative chronologies.
+
+Some instances of E52 may be defined precisely as representing a declaration of a temporal extent, as, for instance, done in a business contract. They constitute declarative time-spans as defined in CRMgeo (Doerr &amp; Hiebel 2013) and can be described via the property E61 Time Primitive P170 defines time (time is defined by): E52 Time-Span.
+
+When used as a common E52 Time-Span for two events, it will nevertheless describe them as being simultaneous, even if nothing else is known.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.cidoc-crm.org/cidoc-crm/E53_Place -->
 
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E53_Place">
-        <owl:equivalentClass rdf:resource="https://w3id.org/hto#Location"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/hto#Location"/>
     </owl:Class>
     
 
@@ -1230,7 +1361,7 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
 
     <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object">
         <owl:equivalentClass rdf:resource="https://w3id.org/hto#InformationResource"/>
-        <rdfs:subClassOf rdf:resource="https://w3id.org/hto#PropositionalResource"/>
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
     </owl:Class>
     
 
@@ -1264,6 +1395,24 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
     
 
 
+    <!-- http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume -->
+
+
+    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P160_has_temporal_projection"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <vann:example xml:lang="en">* The Space Time Volume of the temple in Abu Simbel before its removal
+* The Spave Time Volume of the UK in 2003</vann:example>
+        <rdfs:comment xml:lang="en">This class comprises 4 dimensional point sets (volumes) in physical spacetime regardless its true geometric form. They may derive their identity from being the extent of a material phenomenon or from being the interpretation of an expression defining an extent in spacetime. Intersections of instances of E92 Spacetime Volume, Place and Timespan are also regarded as instances of E92 Spacetime Volume. An instance of E92 Spacetime Volume is either contiguous or composed of a finite number of contiguous subsets. Its boundaries may be fuzzy due to the properties of the phenomena it derives from or due to the limited precision up to which defining expression can be identified with a real extent in spacetime. The duration of existence of an instance of a spacetime volume is trivially its projection on time.</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.cidoc-crm.org/cidoc-crm/SP2_Phenomenal_Place -->
 
 
@@ -1273,7 +1422,8 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
         <vann:example xml:lang="en">* The place where the murder of Ceasar happened
 * Place on H.M.S. Victory at which Nelson died
 * The Place of the Varus Battle
-* The volume in space of my vine glass</vann:example>
+* The volume in space of my vine glass
+* UK in 2003</vann:example>
         <rdfs:comment>This class comprises instances of E53 Place (S) whose extent (U) and position is defined by the spatial projection of the spatiotemporal extent of a real world phenomenon that can be observed or measured. The spatial projection depends on the instance of S3 Reference Space onto which the extent of the phenomenon is projected. In general, there are no limitations to the number of Reference Spaces one could regard, but only few choices are relevant for the cultural-historical discourse. Typical for the archaeological discourse is to choose a reference space with respect to which the remains of some events would stay at the same place, for instance, relative to the bedrock of a continental plate. On the other side, for the citizenship of babies born in aeroplanes, the space in which the boundaries of the overflown state are defined may be relevant (I). Instances of SP2 Phenomenal Place exist as long as the respective reference space is defined. Note that we can talk in particular about what was at a place in a country before a city was built there, i.e., before the time the event occurred by which the place is defined, but we cannot talk about the place of earth before it came into existence due to lack of a reasonable reference space (E). (cidoc:SP2_Phenomenal_Place)</rdfs:comment>
     </owl:Class>
     
@@ -1291,20 +1441,6 @@ This property is transitive and reflexive. (cidoc:P89_falls_within)</rdfs:commen
         <rdfs:comment xml:lang="en">This class compromises systems that are used to describe locations in a SP3 Reference Space (S). An instance of SP4 Spatial Coordinate Reference System is composed of two parts: The first is a Coordinate System which is a set of coordinate axes with specified units of measurement and axis directions. The second part is a set of reference features at rest in the Reference Space it describes in the real world that relate the Coordinate System to real world locations (U) and fix it with respect to the reference object of its Reference Space .
 In surveying and geodesy, instance of SP4 Spatial Coordinate Reference System are called a datum. In the case of spatial coordinate reference systems for the earth the datum consists of the reference points and an ellipsoid that approximates the shape of the earth. National systems often use ellipsoids that approximate their territory best and shift them in an appropriate position relative to the earth while WGS84 is an ellipsoid for the whole earth and used in GPS receivers. In engineering a datum is a reference feature of an object used to create a reference system for measurement.The set of reference features in the real world are subset of E26 Physical Feature that are within the described reference space at rest and pertain to the E18 Physical Thing the reference space is at rest with.
 SP4 Spatial Coordinate Reference Systems have a validity for a certain spatial extent of the SP3 Reference Space and in addition a temporal validity. The combination of coordinate reference system and datum provides a unique identity (I). SP4 Spatial Coordinate Reference Systems may be defined for the earth, moving objects like planes or ships, linear features like boreholes or local systems. If there is a standardised identifier system available, such as EPSG codes, it should be used. (cidoc:SP4_SpatialCoordinateReference_System)</rdfs:comment>
-    </owl:Class>
-    
-
-
-    <!-- http://www.cidoc-crm.org/cidoc-crm/SP5_GeometricPlaceExpression -->
-
-
-    <owl:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/SP5_GeometricPlaceExpression">
-        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
-        <vann:example xml:lang="en">Coordinate Information in GML like &lt;gml:Point gml:id=&quot;p21&quot; srsName=&quot;http://www.opengis.net/def/crs/EPSG/0/4326&quot;&gt; &lt;gml:coordinates&gt;45.67, 88.56&lt;/gml:coordinates&gt; &lt;/gml:Point&gt;</vann:example>
-        <rdfs:comment xml:lang="en">This class comprises definitions of places by quantitative expressions. An instance of SP5 Geometric Place Expression can be seen as a prescription of how to find the location meant by this expression in the real world (S), which is based on measuring where the quantities referred to in the expression lead to, beginning from the reference points of the respective reference system.
-A form of expression may be geometries or map elements defined in a SP4 Spatial Coordinate Reference System that unambiguously identify locations in a SP3 Reference Space. Other forms may refer to areas confined by imaginary lines connecting Phenomenal Places such as trees, islands, cities, mountain tops.
-The identity of a SP5 Place Expression is based on its script or symbolic form (I). Several SP5 Place Expressions can denote the same SP6 Declarative Place .
-Instances of SP5 Geometric Place Expressions that exist in one SP4 Spatial Coordinate Reference System can be transformed to geometries in other SP4 Spatial Coordinate Reference System if there is a known and valid transformation. The product of the transformation in general defines a new instance of SP6 Declarative Place , albeit close to the source of the transformation. This can be due to distortions resulting from the transformation and the limited precision by which the relative position of the reference points differing between the respective reference systems are determined. (cidoc:GeometricPlaceExpression)</rdfs:comment>
     </owl:Class>
     
 
@@ -1616,12 +1752,23 @@ Instances of SP6 Declarative Places may be used to approximate instances of E53 
     
 
 
+    <!-- https://w3id.org/hto#Broadside -->
+
+
+    <owl:Class rdf:about="https://w3id.org/hto#Broadside">
+        <rdfs:subClassOf rdf:resource="https://schema.org/CreativeWork"/>
+        <rdfs:comment xml:lang="en">A single-sheet printed publication used historically to disseminate proclamations, ballads, crime reports, advertisements, and other public communications.</rdfs:comment>
+        <rdfs:label xml:lang="en">Broadside</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/hto#Concept -->
 
 
     <owl:Class rdf:about="https://w3id.org/hto#Concept">
         <owl:disjointWith rdf:resource="https://w3id.org/hto#EntityWithProvenance"/>
-        <rdfs:comment xml:lang="en">A concept &quot;can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive.&quot; (schema:Concept). The concept in this ontology mainly focuses on any idea or notion which can have a record.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A concept &quot;can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive.&quot; (skos:Concept). The concept in this ontology mainly focuses on any idea or notion which can have a record, or topics a work is about.</rdfs:comment>
         <rdfs:label xml:lang="en">Concept</rdfs:label>
     </owl:Class>
     
@@ -1704,6 +1851,18 @@ A gathering of people becomes an instance of E74 Group when it exhibits organiza
     
 
 
+    <!-- https://w3id.org/hto#Image -->
+
+
+    <owl:Class rdf:about="https://w3id.org/hto#Image">
+        <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/hto#InformationResource"/>
+        <rdfs:comment xml:lang="en">This class represents images as one type of E36_Visual_Item.</rdfs:comment>
+        <rdfs:label xml:lang="en">Image</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/hto#InformationResource -->
 
 
@@ -1744,6 +1903,18 @@ A gathering of people becomes an instance of E74 Group when it exhibits organiza
     <owl:Class rdf:about="https://w3id.org/hto#Location">
         <rdfs:comment>A location can be &quot;an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth.&quot; (Prov:Location)</rdfs:comment>
         <rdfs:label xml:lang="en">Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/hto#LocationRecord -->
+
+
+    <owl:Class rdf:about="https://w3id.org/hto#LocationRecord">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/hto#InternalRecord"/>
+        <vann:example xml:lang="en">The entry &quot;Edinburgh&quot; in the collection Gazetteer of Scotland published in 1803.</vann:example>
+        <rdfs:comment xml:lang="en">A record about a location from a work.</rdfs:comment>
+        <rdfs:label xml:lang="en">Location Record</rdfs:label>
     </owl:Class>
     
 
@@ -1831,6 +2002,17 @@ This class also comprises items that are “about” something in the sense of a
     
 
 
+    <!-- https://w3id.org/hto#ResourceType -->
+
+
+    <owl:Class rdf:about="https://w3id.org/hto#ResourceType">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/hto#Type"/>
+        <rdfs:comment xml:lang="en">Type of &apos;Propositional Resource&apos;, this class is designed to classify resources simply without the need to create indivual classes for each type of the resource. For example, we only need the types and URIs linked external resources, as more information can be found externally.</rdfs:comment>
+        <rdfs:label xml:lang="en">Resource Type</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/hto#Series -->
 
 
@@ -1899,7 +2081,7 @@ This class also comprises items that are “about” something in the sense of a
                 <owl:onClass rdf:resource="https://w3id.org/hto#Page"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">is the article in the encyclopaedia, or an entry in a dictionary.</rdfs:comment>
+        <rdfs:comment xml:lang="en">is an article in the encyclopaedia, or an entry in a dictionary.</rdfs:comment>
         <rdfs:label xml:lang="en">Term Record</rdfs:label>
     </owl:Class>
     
@@ -2019,7 +2201,18 @@ This class also comprises items that are “about” something in the sense of a
     <!-- https://w3id.org/hto#Clean -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/hto#Clean"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/hto#Clean">
+        <isTextQualityHigherThan rdf:resource="https://w3id.org/hto#High"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hto#Continent -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hto#Continent">
+        <rdf:type rdf:resource="https://w3id.org/hto#LocationType"/>
+    </owl:NamedIndividual>
     
 
 
@@ -2041,10 +2234,21 @@ This class also comprises items that are “about” something in the sense of a
     
 
 
+    <!-- https://w3id.org/hto#Dbpedia_Item -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hto#Dbpedia_Item">
+        <rdf:type rdf:resource="https://w3id.org/hto#ResourceType"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/hto#High -->
 
 
-    <owl:NamedIndividual rdf:about="https://w3id.org/hto#High"/>
+    <owl:NamedIndividual rdf:about="https://w3id.org/hto#High">
+        <isTextQualityHigherThan rdf:resource="https://w3id.org/hto#Moderate"/>
+    </owl:NamedIndividual>
     
 
 
@@ -2060,6 +2264,7 @@ This class also comprises items that are “about” something in the sense of a
 
     <owl:NamedIndividual rdf:about="https://w3id.org/hto#Moderate">
         <rdf:type rdf:resource="https://w3id.org/hto#TextQuality"/>
+        <isTextQualityHigherThan rdf:resource="https://w3id.org/hto#Low"/>
     </owl:NamedIndividual>
     
 
@@ -2087,6 +2292,15 @@ This class also comprises items that are “about” something in the sense of a
 
     <owl:NamedIndividual rdf:about="https://w3id.org/hto#Town">
         <rdf:type rdf:resource="https://w3id.org/hto#LocationType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/hto#Wikidata_Item -->
+
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/hto#Wikidata_Item">
+        <rdf:type rdf:resource="https://w3id.org/hto#ResourceType"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 

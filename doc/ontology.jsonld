@@ -9,7 +9,30 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid10",
+  "@id" : "_:genid13",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/hto#Edition"
+    }, {
+      "@id" : "https://w3id.org/hto#Series"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid16",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onClass" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/P160_has_temporal_projection"
+  } ],
+  "http://www.w3.org/2002/07/owl#qualifiedCardinality" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+    "@value" : "1"
+  } ]
+}, {
+  "@id" : "_:genid17",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -19,7 +42,7 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid13",
+  "@id" : "_:genid20",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/hto#hasOriginalDescription"
@@ -28,7 +51,7 @@
     "@id" : "https://w3id.org/hto#OriginalDescription"
   } ]
 }, {
-  "@id" : "_:genid14",
+  "@id" : "_:genid21",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/hto#wasRecordedIn"
@@ -37,7 +60,7 @@
     "@id" : "https://w3id.org/hto#Work"
   } ]
 }, {
-  "@id" : "_:genid15",
+  "@id" : "_:genid22",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/hto#TextQuality"
@@ -50,7 +73,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid16",
+  "@id" : "_:genid23",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/hto#wasMemberOf"
@@ -59,7 +82,7 @@
     "@id" : "https://w3id.org/hto#Work"
   } ]
 }, {
-  "@id" : "_:genid17",
+  "@id" : "_:genid24",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/hto#wasMemberOf"
@@ -68,7 +91,7 @@
     "@id" : "https://w3id.org/hto#Page"
   } ]
 }, {
-  "@id" : "_:genid18",
+  "@id" : "_:genid25",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/hto#Page"
@@ -81,7 +104,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid19",
+  "@id" : "_:genid26",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onClass" : [ {
     "@id" : "https://w3id.org/hto#Page"
@@ -94,7 +117,7 @@
     "@value" : "1"
   } ]
 }, {
-  "@id" : "_:genid20",
+  "@id" : "_:genid27",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#oneOf" : [ {
     "@list" : [ {
@@ -108,16 +131,16 @@
     } ]
   } ]
 }, {
-  "@id" : "_:genid25",
+  "@id" : "_:genid32",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
-    "@id" : "_:genid26"
+    "@id" : "_:genid33"
   } ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
     "@id" : "https://w3id.org/hto#wasMemberOf"
   } ]
 }, {
-  "@id" : "_:genid26",
+  "@id" : "_:genid33",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -143,9 +166,15 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
-      "@id" : "https://w3id.org/hto#Edition"
+      "@id" : "https://schema.org/Article"
     }, {
-      "@id" : "https://w3id.org/hto#Series"
+      "@id" : "https://schema.org/PublicationIssue"
+    }, {
+      "@id" : "https://w3id.org/hto#Broadside"
+    }, {
+      "@id" : "https://w3id.org/hto#InternalRecord"
+    }, {
+      "@id" : "https://w3id.org/hto#Volume"
     } ]
   } ]
 }, {
@@ -158,10 +187,10 @@
   "@id" : "http://purl.org/dc/elements/1.1/description",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://purl.org/dc/elements/1.1/license",
+  "@id" : "http://purl.org/dc/elements/1.1/title",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
-  "@id" : "http://purl.org/dc/elements/1.1/title",
+  "@id" : "http://purl.org/dc/terms/license",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "http://purl.org/vocab/vann/example",
@@ -172,39 +201,6 @@
 }, {
   "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://schema.org/abstract",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
-}, {
-  "@id" : "http://schema.org/birthDate",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
-}, {
-  "@id" : "http://schema.org/datePublished",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
-  } ]
-}, {
-  "@id" : "http://schema.org/deathDate",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
-}, {
-  "@id" : "http://schema.org/editor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
-  } ]
-}, {
-  "@id" : "http://schema.org/genre",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
-}, {
-  "@id" : "http://schema.org/identifier",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
-}, {
-  "@id" : "http://schema.org/inLanguage",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
-}, {
-  "@id" : "http://schema.org/publisher",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
   "@id" : "http://www.cidoc-crm.org/cidoc-crm/E21_Person",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -221,12 +217,29 @@
     "@id" : "http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"
   } ]
 }, {
+  "@id" : "http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"
+  } ]
+}, {
   "@id" : "http://www.cidoc-crm.org/cidoc-crm/E39_Actor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
 }, {
+  "@id" : "http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/vocab/vann/example" : [ {
+    "@language" : "en",
+    "@value" : "* 1961\n* From 12-17-1993 to 12-8-1996"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "This class comprises abstract temporal extents, in the sense of Galilean physics, having a beginning, an end and a duration.\n\nInstances of E52 Time-Span have no semantic connotations about phenomena happening within the temporal extent they represent. They do not convey any meaning other than a positioning on the “time-line” of chronology. The actual extent of an instance of E52 Time-Span can be approximated by properties of E52 Time-Span giving inner and outer bounds in the form of dates (instances of E61 Time Primitive). Comparing knowledge about time-spans is fundamental for chronological reasoning.\n\nSome instances of E52 Time-Span may be defined as the actual, in principle observable, temporal extent of instances of E2 Temporal Entity via the property P4 has time-span (is time-span of): E52 Time-Span. They constitute phenomenal time-spans as defined in CRMgeo (Doerr & Hiebel 2013). Since our knowledge of history is imperfect and physical phenomena are fuzzy in nature, the extent of phenomenal time-spans can only be described in approximation. An extreme case of approximation, might, for example, define an instance of E52 Time-Span having unknown beginning, end and duration. It may, nevertheless, be associated with other descriptions by which we can infer knowledge about it, such as in relative chronologies.\n\nSome instances of E52 may be defined precisely as representing a declaration of a temporal extent, as, for instance, done in a business contract. They constitute declarative time-spans as defined in CRMgeo (Doerr & Hiebel 2013) and can be described via the property E61 Time Primitive P170 defines time (time is defined by): E52 Time-Span.\n\nWhen used as a common E52 Time-Span for two events, it will nevertheless describe them as being simultaneous, even if nothing else is known."
+  } ]
+}, {
   "@id" : "http://www.cidoc-crm.org/cidoc-crm/E53_Place",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/hto#Location"
   } ]
 }, {
@@ -251,7 +264,7 @@
   "@id" : "http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "https://w3id.org/hto#PropositionalResource"
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://w3id.org/hto#InformationResource"
@@ -280,6 +293,66 @@
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://w3id.org/hto#PropositionalResource"
   } ]
+}, {
+  "@id" : "http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/vocab/vann/example" : [ {
+    "@language" : "en",
+    "@value" : "* The Space Time Volume of the temple in Abu Simbel before its removal\n* The Spave Time Volume of the UK in 2003"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "This class comprises 4 dimensional point sets (volumes) in physical spacetime regardless its true geometric form. They may derive their identity from being the extent of a material phenomenon or from being the interpretation of an expression defining an extent in spacetime. Intersections of instances of E92 Spacetime Volume, Place and Timespan are also regarded as instances of E92 Spacetime Volume. An instance of E92 Spacetime Volume is either contiguous or composed of a finite number of contiguous subsets. Its boundaries may be fuzzy due to the properties of the phenomena it derives from or due to the limited precision up to which defining expression can be identified with a real extent in spacetime. The duration of existence of an instance of a spacetime volume is trivially its projection on time."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "_:genid16"
+  } ]
+}, {
+  "@id" : "http://www.cidoc-crm.org/cidoc-crm/P138_represents",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation"
+  } ]
+}, {
+  "@id" : "http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.cidoc-crm.org/cidoc-crm/P160_has_temporal_projection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "This property describes the temporal projection of an instance of an E92 Spacetime Volume. The property P4 has time-span is the same as P160 has temporal projection if it is used to document an instance of E4 Period or any subclass of it."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/P160i_is_temporal_projection_of"
+  } ]
+}, {
+  "@id" : "http://www.cidoc-crm.org/cidoc-crm/P160i_is_temporal_projection_of",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.cidoc-crm.org/cidoc-crm/P161_has_spatial_projection",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/E53_Place"
+  } ],
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of"
+  } ]
+}, {
+  "@id" : "http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
   "@id" : "http://www.cidoc-crm.org/cidoc-crm/P2_has_type",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
@@ -314,7 +387,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://purl.org/vocab/vann/example" : [ {
     "@language" : "en",
-    "@value" : "* The place where the murder of Ceasar happened\n* Place on H.M.S. Victory at which Nelson died\n* The Place of the Varus Battle\n* The volume in space of my vine glass"
+    "@value" : "* The place where the murder of Ceasar happened\n* Place on H.M.S. Victory at which Nelson died\n* The Place of the Varus Battle\n* The volume in space of my vine glass\n* UK in 2003"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@value" : "This class comprises instances of E53 Place (S) whose extent (U) and position is defined by the spatial projection of the spatiotemporal extent of a real world phenomenon that can be observed or measured. The spatial projection depends on the instance of S3 Reference Space onto which the extent of the phenomenon is projected. In general, there are no limitations to the number of Reference Spaces one could regard, but only few choices are relevant for the cultural-historical discourse. Typical for the archaeological discourse is to choose a reference space with respect to which the remains of some events would stay at the same place, for instance, relative to the bedrock of a continental plate. On the other side, for the citizenship of babies born in aeroplanes, the space in which the boundaries of the overflown state are defined may be relevant (I). Instances of SP2 Phenomenal Place exist as long as the respective reference space is defined. Note that we can talk in particular about what was at a place in a country before a city was built there, i.e., before the time the event occurred by which the place is defined, but we cannot talk about the place of earth before it came into existence due to lack of a reasonable reference space (E). (cidoc:SP2_Phenomenal_Place)"
@@ -337,20 +410,6 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure"
-  } ]
-}, {
-  "@id" : "http://www.cidoc-crm.org/cidoc-crm/SP5_GeometricPlaceExpression",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://purl.org/vocab/vann/example" : [ {
-    "@language" : "en",
-    "@value" : "Coordinate Information in GML like <gml:Point gml:id=\"p21\" srsName=\"http://www.opengis.net/def/crs/EPSG/0/4326\"> <gml:coordinates>45.67, 88.56</gml:coordinates> </gml:Point>"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "This class comprises definitions of places by quantitative expressions. An instance of SP5 Geometric Place Expression can be seen as a prescription of how to find the location meant by this expression in the real world (S), which is based on measuring where the quantities referred to in the expression lead to, beginning from the reference points of the respective reference system.\nA form of expression may be geometries or map elements defined in a SP4 Spatial Coordinate Reference System that unambiguously identify locations in a SP3 Reference Space. Other forms may refer to areas confined by imaginary lines connecting Phenomenal Places such as trees, islands, cities, mountain tops.\nThe identity of a SP5 Place Expression is based on its script or symbolic form (I). Several SP5 Place Expressions can denote the same SP6 Declarative Place .\nInstances of SP5 Geometric Place Expressions that exist in one SP4 Spatial Coordinate Reference System can be transformed to geometries in other SP4 Spatial Coordinate Reference System if there is a known and valid transformation. The product of the transformation in general defines a new instance of SP6 Declarative Place , albeit close to the source of the transformation. This can be due to distortions resulting from the transformation and the limited precision by which the relative position of the reference points differing between the respective reference systems are determined. (cidoc:GeometricPlaceExpression)"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"
   } ]
 }, {
   "@id" : "http://www.cidoc-crm.org/cidoc-crm/SP6_Declarative_Place",
@@ -398,6 +457,26 @@
     "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
   } ]
 }, {
+  "@id" : "http://www.opengis.net/ont/geosparql#asWKT",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "The property geo:asWKT is defined to link a Geometry with its WKT serialization. (geo:asWKT)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Geometry"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "asWKT"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#wktLiteral"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
   "@id" : "http://www.opengis.net/ont/geosparql#geoJSONLiteral",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
   "http://purl.org/vocab/vann/example" : [ {
@@ -427,6 +506,16 @@
     "@id" : "http://www.opengis.net/ont/geosparql#Geometry"
   } ]
 }, {
+  "@id" : "http://www.opengis.net/ont/geosparql#wktLiteral",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ],
+  "http://purl.org/vocab/vann/example" : [ {
+    "@value" : "\"Point(-83.38 33.95)\"^^<http://www.opengis.net/ont/geosparql#wktLiteral>"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A Well-known Text serialization of a Geometry object."
+  } ]
+}, {
   "@id" : "http://www.w3.org/2001/XMLSchema#date",
   "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
 }, {
@@ -435,6 +524,12 @@
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
     "@id" : "https://w3id.org/hto#Concept"
   } ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#broader",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#narrower",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
   "@id" : "http://www.w3.org/ns/oa#Annotation",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -754,6 +849,54 @@
     "@id" : "https://schema.org/subjectOf"
   } ]
 }, {
+  "@id" : "https://schema.org/abstract",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://schema.org/birthDate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://schema.org/datePublished",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://schema.org/deathDate",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://schema.org/editor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
+  } ]
+}, {
+  "@id" : "https://schema.org/genre",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://schema.org/identifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
+  "@id" : "https://schema.org/inLanguage",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/2002/07/owl#topDataProperty"
+  } ]
+}, {
   "@id" : "https://schema.org/mentions",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -763,6 +906,9 @@
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://schema.org/CreativeWork"
   } ]
+}, {
+  "@id" : "https://schema.org/publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
   "@id" : "https://schema.org/subjectOf",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
@@ -779,11 +925,11 @@
     "@language" : "en",
     "@value" : "An ontology designed to represent heritage textual data"
   } ],
-  "http://purl.org/dc/elements/1.1/license" : [ {
-    "@id" : "https://opensource.org/licenses/MIT"
-  } ],
   "http://purl.org/dc/elements/1.1/title" : [ {
     "@value" : "Heritage Text Ontology"
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "https://opensource.org/licenses/MIT"
   } ],
   "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
     "@language" : "en",
@@ -830,7 +976,7 @@
     "@value" : "Agent"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid10"
+    "@id" : "_:genid17"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#ArticleTermRecord",
@@ -847,6 +993,20 @@
     "@id" : "https://w3id.org/hto#TermRecord"
   } ]
 }, {
+  "@id" : "https://w3id.org/hto#Broadside",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A single-sheet printed publication used historically to disseminate proclamations, ballads, crime reports, advertisements, and other public communications."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Broadside"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://schema.org/CreativeWork"
+  } ]
+}, {
   "@id" : "https://w3id.org/hto#City",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -854,13 +1014,16 @@
   } ]
 }, {
   "@id" : "https://w3id.org/hto#Clean",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "https://w3id.org/hto#isTextQualityHigherThan" : [ {
+    "@id" : "https://w3id.org/hto#High"
+  } ]
 }, {
   "@id" : "https://w3id.org/hto#Concept",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "A concept \"can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive.\" (schema:Concept). The concept in this ontology mainly focuses on any idea or notion which can have a record."
+    "@value" : "A concept \"can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive.\" (skos:Concept). The concept in this ontology mainly focuses on any idea or notion which can have a record, or topics a work is about."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -886,6 +1049,12 @@
     "@id" : "https://w3id.org/hto#Description"
   } ]
 }, {
+  "@id" : "https://w3id.org/hto#Continent",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/hto#LocationType"
+  } ]
+}, {
   "@id" : "https://w3id.org/hto#Country",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
@@ -896,6 +1065,12 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://w3id.org/hto#LocationType"
+  } ]
+}, {
+  "@id" : "https://w3id.org/hto#Dbpedia_Item",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/hto#ResourceType"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#Description",
@@ -975,7 +1150,26 @@
   } ]
 }, {
   "@id" : "https://w3id.org/hto#High",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "https://w3id.org/hto#isTextQualityHigherThan" : [ {
+    "@id" : "https://w3id.org/hto#Moderate"
+  } ]
+}, {
+  "@id" : "https://w3id.org/hto#Image",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "This class represents images as one type of E36_Visual_Item."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Image"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item"
+  }, {
+    "@id" : "https://w3id.org/hto#InformationResource"
+  } ]
 }, {
   "@id" : "https://w3id.org/hto#InformationResource",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -1004,9 +1198,9 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/hto#ConceptRecord"
   }, {
-    "@id" : "_:genid13"
+    "@id" : "_:genid20"
   }, {
-    "@id" : "_:genid14"
+    "@id" : "_:genid21"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#Location",
@@ -1017,6 +1211,24 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Location"
+  } ]
+}, {
+  "@id" : "https://w3id.org/hto#LocationRecord",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://purl.org/vocab/vann/example" : [ {
+    "@language" : "en",
+    "@value" : "The entry \"Edinburgh\" in the collection Gazetteer of Scotland published in 1803."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A record about a location from a work."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Location Record"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/hto#InternalRecord"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#LocationType",
@@ -1044,6 +1256,9 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://w3id.org/hto#TextQuality"
+  } ],
+  "https://w3id.org/hto#isTextQualityHigherThan" : [ {
+    "@id" : "https://w3id.org/hto#Low"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#Organization",
@@ -1073,7 +1288,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/hto#Description"
   }, {
-    "@id" : "_:genid15"
+    "@id" : "_:genid22"
   } ],
   "http://www.w3.org/2002/07/owl#disjointWith" : [ {
     "@id" : "https://w3id.org/hto#Summary"
@@ -1092,7 +1307,7 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/hto#Work"
   }, {
-    "@id" : "_:genid16"
+    "@id" : "_:genid23"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#Person",
@@ -1127,6 +1342,20 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
     "@id" : "https://w3id.org/hto#LocationType"
+  } ]
+}, {
+  "@id" : "https://w3id.org/hto#ResourceType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Type of 'Propositional Resource', this class is designed to classify resources simply without the need to create indivual classes for each type of the resource. For example, we only need the types and URIs linked external resources, as more information can be found externally."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Resource Type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/hto#Type"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#Series",
@@ -1190,7 +1419,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "is the article in the encyclopaedia, or an entry in a dictionary."
+    "@value" : "is an article in the encyclopaedia, or an entry in a dictionary."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1199,11 +1428,11 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/hto#InternalRecord"
   }, {
-    "@id" : "_:genid17"
+    "@id" : "_:genid24"
   }, {
-    "@id" : "_:genid18"
+    "@id" : "_:genid25"
   }, {
-    "@id" : "_:genid19"
+    "@id" : "_:genid26"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#TextQuality",
@@ -1220,7 +1449,7 @@
     "@id" : "http://www.cidoc-crm.org/cidoc-crm/E58_Measurement_Unit"
   } ],
   "http://www.w3.org/2002/07/owl#equivalentClass" : [ {
-    "@id" : "_:genid20"
+    "@id" : "_:genid27"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#TopicTermRecord",
@@ -1267,7 +1496,13 @@
   "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
     "@id" : "https://w3id.org/hto#Work"
   }, {
-    "@id" : "_:genid25"
+    "@id" : "_:genid32"
+  } ]
+}, {
+  "@id" : "https://w3id.org/hto#Wikidata_Item",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/hto#ResourceType"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#Work",
@@ -1316,7 +1551,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://schema.org/abstract"
+    "@id" : "https://schema.org/abstract"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#birthYear",
@@ -1336,7 +1571,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#int"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://schema.org/birthDate"
+    "@id" : "https://schema.org/birthDate"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#deathYear",
@@ -1348,7 +1583,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#int"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://schema.org/deathDate"
+    "@id" : "https://schema.org/deathDate"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#editor",
@@ -1368,7 +1603,7 @@
     "@id" : "https://w3id.org/hto#Person"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://schema.org/editor"
+    "@id" : "https://schema.org/editor"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#endsAtPage",
@@ -1388,7 +1623,7 @@
     "@id" : "https://w3id.org/hto#Page"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/hto#wasRecordedIn"
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#genre",
@@ -1408,7 +1643,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://schema.org/genre"
+    "@id" : "https://schema.org/genre"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#hadConceptRecord",
@@ -1484,16 +1719,6 @@
     "@id" : "http://www.w3.org/ns/oa#Annotation"
   } ]
 }, {
-  "@id" : "https://w3id.org/hto#hasBroaderSubject",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has broader subject"
-  } ],
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/hto#hasNarrowerSubject"
-  } ]
-}, {
   "@id" : "https://w3id.org/hto#hasDescription",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1518,23 +1743,6 @@
     "@id" : "http://www.cidoc-crm.org/cidoc-crm/P2_has_type"
   } ]
 }, {
-  "@id" : "https://w3id.org/hto#hasNarrowerSubject",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty", "http://www.w3.org/2002/07/owl#TransitiveProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "A property linking a subject to its more specific sub-topics."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/hto#Subject"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has narrower subject"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/hto#Subject"
-  } ]
-}, {
   "@id" : "https://w3id.org/hto#hasOriginalDescription",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
@@ -1548,6 +1756,22 @@
   } ],
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/hto#isOriginalDescriptionOf"
+  } ]
+}, {
+  "@id" : "https://w3id.org/hto#hasResourceType",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has Resource Type"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/hto#ResourceType"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.cidoc-crm.org/cidoc-crm/P2_has_type"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#hasSummary",
@@ -1626,7 +1850,7 @@
     "@value" : "is about"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/hto#Subject"
+    "@id" : "https://w3id.org/hto#Concept"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://schema.org/about"
@@ -1698,7 +1922,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://schema.org/inLanguage"
+    "@id" : "https://schema.org/inLanguage"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#letters",
@@ -1725,7 +1949,7 @@
     "@value" : "is the Metadata Management System identifier of an edition or series"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid7"
+    "@id" : "_:genid13"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1735,7 +1959,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://schema.org/identifier"
+    "@id" : "https://schema.org/identifier"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#name",
@@ -1792,7 +2016,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#int"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://schema.org/identifier"
+    "@id" : "https://schema.org/identifier"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#numberOfPages",
@@ -1919,14 +2143,14 @@
     "@id" : "_:genid4"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://schema.org/publisher"
+    "@id" : "https://schema.org/publisher"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#referencedBy",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "an entity was refererenced by other entity"
+    "@value" : "a thing was referenced by an entity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1940,7 +2164,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "one entity refers to other entity."
+    "@value" : "one entity refers to another thing"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/hto#EntityWithProvenance"
@@ -1948,9 +2172,6 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "refers to"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://w3id.org/hto#EntityWithProvenance"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#shelfLocator",
@@ -1997,7 +2218,7 @@
     "@value" : "is the page in which the description of a concept record starts."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://w3id.org/hto#InternalRecord"
+    "@id" : "_:genid7"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -2007,7 +2228,7 @@
     "@id" : "https://w3id.org/hto#Page"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "https://w3id.org/hto#wasRecordedIn"
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#subtitle",
@@ -2097,7 +2318,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://schema.org/identifier"
+    "@id" : "https://schema.org/identifier"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#wasConceptRecordOf",
@@ -2130,7 +2351,7 @@
     "@id" : "https://w3id.org/hto#Work"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom"
+    "@id" : "http://www.w3.org/2002/07/owl#topObjectProperty"
   } ]
 }, {
   "@id" : "https://w3id.org/hto#wasSupplementOf",
@@ -2148,6 +2369,6 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#int"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://schema.org/datePublished"
+    "@id" : "https://schema.org/datePublished"
   } ]
 } ]

@@ -7,7 +7,6 @@ In section introduces the classes and properties used to represent Textual Herit
     <li><a href="#desc-content">Textual Content</a></li>
     <li><a href="#desc-annotation">Annotation</a></li>
     <li><a href="#desc-geospatial">Geospatial data</a></li>
-    <li><a href="#desc-subject">Subject(Topic)</a></li>
 </ul>
 
 
@@ -300,48 +299,6 @@ In section introduces the classes and properties used to represent Textual Herit
 </figure>
 </div>
 
-
-<h3 id="desc-subject">Subject(Topic)</h3>
-
-<p>
-    A subject in this ontology refers to topics or themes on which a work or event is focused. It is designed to accommodate
-    the representation of subject headings and topics, which could be potentially generated using advanced NLP methods.
-</p>
-
-<div style="text-align: center">
-   <figure>
-    <img
-            src="Subject.png"
-            alt="Diagram of Classes and Properties for Subject"
-    >
-    <figcaption id="fig9">Figure 9. Classes and Properties for Subject(Topic)<br>
-        The diagrams in this document describes Work as blue rectangle, <br>
-        Event as purple hexagon, Subject as yellow rectangle<br>
-        property as arrow (arrow from range pointing to domain, note that arrow without text represents super-class property).<br>
-    </figcaption>
-    </figure>
-</div>
-
-<p>
-    <a href="#fig9">Figure 9</a> highlights the key terms used to represent the subjects of events and works. A <a href="#Subject">Subject</a>
-    can be linked to an <a href="#Event">Event</a> or a <a href="#Work">Work</a> using the property <a href="#isAbout">isAbout</a>. For example,
-    in <a href="#fig9">Figure 10</a>, a news article <span style="color: red">ex:article1</span> is about the subject "St Andrews in 19th century"
-    <span style="color: red">ex:st_andrews_19c</span> and this subject also refers to a location. In addition, we could link a <a href="#Subject">Subject</a>
-    to its broader topics using the property <a href="#hasBroaderSubject">hasBroaderSubject</a>. For example, <span style="color: red">ex:st_andrews_19c</span> in figure 10
-    hasBroaderSubject "the 19th century" <span style="color: red">ex:19c</span> which is a subject and also a time span.
-</p>
-
-<div style="text-align: center">
-   <figure>
-    <img
-            src="Subject_example.png"
-            alt="Example diagram of using HTO to represent subjects of a news article"
-    >
-    <figcaption id="fig10">Figure 10. Example of using HTO to represent subjects of a news article<br>
-        the namespace <em>ex</em> is just used as an example, and it could be any existing namespace.
-    </figcaption>
-</figure>
-</div>
 
 
 

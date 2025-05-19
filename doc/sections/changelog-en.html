@@ -1,0 +1,624 @@
+<div id="changelog">
+<h2 id="changes" class="list">Changes from last version</h2>
+<h3 id="changeClass" class="list">Classes</h3>
+<details><summary><u>Modified classes</u></summary>
+<ul><li><a href="#http://www.cidoc-crm.org/cidoc-crm/E53_Place">http://www.cidoc-crm.org/cidoc-crm/E53_Place</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/hto#Location</li>
+</ul>
+<ul>
+<li>Deleted: EquivalentClasses EquivalentClasses(&lt;http://www.cidoc-crm.org/cidoc-crm/E53_Place&gt; &lt;https://w3id.org/hto#Location&gt;)</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object">http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object</a>
+<ul>
+<li>Added: SubClass of http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object</li>
+</ul>
+<ul>
+<li>Deleted: SubClass of https://w3id.org/hto#PropositionalResource</li>
+</ul>
+</li>
+<li><a href="#Concept">https://w3id.org/hto#Concept</a>
+<ul>
+<li>Added: rdfs:comment "A concept \"can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive.\" (skos:Concept). The concept in this ontology mainly focuses on any idea or notion which can have a record, or topics a work is about."@en</li>
+</ul>
+<ul>
+<li>Deleted: rdfs:comment "A concept \"can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive.\" (schema:Concept). The concept in this ontology mainly focuses on any idea or notion which can have a record."@en</li>
+</ul>
+</li>
+<li><a href="#Location">https://w3id.org/hto#Location</a>
+<ul>
+<li>Deleted: EquivalentClasses EquivalentClasses(&lt;http://www.cidoc-crm.org/cidoc-crm/E53_Place&gt; &lt;https://w3id.org/hto#Location&gt;)</li>
+</ul>
+</li>
+<li><a href="#Person">https://w3id.org/hto#Person</a>
+<ul>
+<li>Added: EquivalentClasses EquivalentClasses(&lt;https://schema.org/Person&gt; &lt;https://w3id.org/hto#Person&gt;)</li>
+</ul>
+<ul>
+<li>Deleted: EquivalentClasses EquivalentClasses(&lt;http://schema.org/Person&gt; &lt;https://w3id.org/hto#Person&gt;)</li>
+</ul>
+</li>
+<li><a href="#Series">https://w3id.org/hto#Series</a>
+<ul>
+<li>Added: EquivalentClasses EquivalentClasses(&lt;https://schema.org/CreativeWorkSeries&gt; &lt;https://w3id.org/hto#Series&gt;)</li>
+<li>Added: rdfs:comment "A series is a a group of related items, typically but not necessarily of the same kind. Series are usually organized into some order, often chronological. (schema:CreativeWorkSeries)"@en</li>
+</ul>
+<ul>
+<li>Deleted: rdfs:comment "A series is a sequence or grouping of related works or items that share common characteristics, themes, or connections. These works are often linked together by a common thread, storyline, characters, or overarching concept."^^xsd:string</li>
+</ul>
+</li>
+<li><a href="#TermRecord">https://w3id.org/hto#TermRecord</a>
+<ul>
+<li>Added: rdfs:comment "is an article in the encyclopaedia, or an entry in a dictionary."@en</li>
+</ul>
+<ul>
+<li>Deleted: rdfs:comment "is the article in the encyclopaedia, or an entry in a dictionary."@en</li>
+</ul>
+</li>
+<li><a href="#Volume">https://w3id.org/hto#Volume</a>
+<ul>
+<li>Added: EquivalentClasses EquivalentClasses(&lt;https://schema.org/PublicationVolume&gt; &lt;https://w3id.org/hto#Volume&gt;)</li>
+<li></ul>
+<ul>
+<li></ul>
+</li>
+<li><a href="#Work">https://w3id.org/hto#Work</a>
+<ul>
+<li>Added: EquivalentClasses EquivalentClasses(&lt;https://schema.org/CreativeWork&gt; &lt;https://w3id.org/hto#Work&gt;)</li>
+</ul>
+<ul>
+<li>Deleted: EquivalentClasses EquivalentClasses(&lt;http://schema.org/CreativeWork&gt; &lt;https://w3id.org/hto#Work&gt;)</li>
+</ul>
+</li>
+<li><a href="#WorkCollection">https://w3id.org/hto#WorkCollection</a>
+<ul>
+<li>Added: EquivalentClasses EquivalentClasses(&lt;https://schema.org/Collection&gt; &lt;https://w3id.org/hto#WorkCollection&gt;)</li>
+</ul>
+<ul>
+<li>Deleted: EquivalentClasses EquivalentClasses(&lt;http://schema.org/Collection&gt; &lt;https://w3id.org/hto#WorkCollection&gt;)</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Added classes</u></summary>
+<ul><li><a href="#http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure">http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure</a>
+<ul>
+<li>Added: SubClass of http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item">http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item</a>
+<ul>
+<li>Added: SubClass of http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span">http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span</a>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume">http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume</a>
+<ul>
+<li></ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/SP2_Phenomenal_Place">http://www.cidoc-crm.org/cidoc-crm/SP2_Phenomenal_Place</a>
+<ul>
+<li>Added: SubClass of http://www.cidoc-crm.org/cidoc-crm/E53_Place</li>
+<li>Added: SubClass of http://www.opengis.net/ont/geosparql#Feature</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/SP4_Spatial_Coordinate_Reference_System">http://www.cidoc-crm.org/cidoc-crm/SP4_Spatial_Coordinate_Reference_System</a>
+<ul>
+<li>Added: SubClass of http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/SP6_Declarative_Place">http://www.cidoc-crm.org/cidoc-crm/SP6_Declarative_Place</a>
+<ul>
+<li>Added: SubClass of http://www.cidoc-crm.org/cidoc-crm/E53_Place</li>
+<li>Added: SubClass of http://www.opengis.net/ont/geosparql#Geometry</li>
+</ul>
+</li>
+<li><a href="#http://www.opengis.net/ont/geosparql#Feature">http://www.opengis.net/ont/geosparql#Feature</a>
+<ul>
+<li>Added: SubClass of http://www.w3.org/ns/prov#Location</li>
+</ul>
+</li>
+<li><a href="#http://www.opengis.net/ont/geosparql#Geometry">http://www.opengis.net/ont/geosparql#Geometry</a>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#Annotation">http://www.w3.org/ns/oa#Annotation</a>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#ResourceSelection">http://www.w3.org/ns/oa#ResourceSelection</a>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#Selector">http://www.w3.org/ns/oa#Selector</a>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#SpecificResource">http://www.w3.org/ns/oa#SpecificResource</a>
+<ul>
+<li>Added: SubClass of http://www.w3.org/ns/oa#ResourceSelection</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#TextPositionSelector">http://www.w3.org/ns/oa#TextPositionSelector</a>
+<ul>
+<li>Added: SubClass of http://www.w3.org/ns/oa#Selector</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#TextQuoteSelector">http://www.w3.org/ns/oa#TextQuoteSelector</a>
+<ul>
+<li>Added: SubClass of http://www.w3.org/ns/oa#Selector</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/Article">https://schema.org/Article</a>
+<ul>
+<li>Added: SubClass of https://schema.org/CreativeWork</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/Book">https://schema.org/Book</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/hto#Work</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/Collection">https://schema.org/Collection</a>
+<ul>
+<li>Added: EquivalentClasses EquivalentClasses(&lt;https://schema.org/Collection&gt; &lt;https://w3id.org/hto#WorkCollection&gt;)</li>
+<li>Added: SubClass of https://schema.org/CreativeWork</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/CreativeWork">https://schema.org/CreativeWork</a>
+<ul>
+<li>Added: EquivalentClasses EquivalentClasses(&lt;https://schema.org/CreativeWork&gt; &lt;https://w3id.org/hto#Work&gt;)</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/CreativeWorkSeries">https://schema.org/CreativeWorkSeries</a>
+<ul>
+<li>Added: EquivalentClasses EquivalentClasses(&lt;https://schema.org/CreativeWorkSeries&gt; &lt;https://w3id.org/hto#Series&gt;)</li>
+<li>Added: SubClass of https://schema.org/CreativeWork</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/NewsArticle">https://schema.org/NewsArticle</a>
+<ul>
+<li>Added: SubClass of https://schema.org/Article</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/Newspaper">https://schema.org/Newspaper</a>
+<ul>
+<li>Added: SubClass of https://schema.org/CreativeWorkSeries</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/Person">https://schema.org/Person</a>
+<ul>
+<li>Added: EquivalentClasses EquivalentClasses(&lt;https://schema.org/Person&gt; &lt;https://w3id.org/hto#Person&gt;)</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/PublicationIssue">https://schema.org/PublicationIssue</a>
+<ul>
+<li>Added: SubClass of https://schema.org/CreativeWork</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/PublicationVolume">https://schema.org/PublicationVolume</a>
+<ul>
+<li>Added: EquivalentClasses EquivalentClasses(&lt;https://schema.org/PublicationVolume&gt; &lt;https://w3id.org/hto#Volume&gt;)</li>
+<li>Added: SubClass of https://schema.org/CreativeWork</li>
+</ul>
+</li>
+<li><a href="#Broadside">https://w3id.org/hto#Broadside</a>
+<ul>
+<li>Added: SubClass of https://schema.org/CreativeWork</li>
+</ul>
+</li>
+<li><a href="#Image">https://w3id.org/hto#Image</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/hto#InformationResource</li>
+<li>Added: SubClass of http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item</li>
+</ul>
+</li>
+<li><a href="#LocationRecord">https://w3id.org/hto#LocationRecord</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/hto#InternalRecord</li>
+</ul>
+</li>
+<li><a href="#LocationType">https://w3id.org/hto#LocationType</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/hto#Type</li>
+</ul>
+</li>
+<li><a href="#ResourceType">https://w3id.org/hto#ResourceType</a>
+<ul>
+<li>Added: SubClass of https://w3id.org/hto#Type</li>
+</ul>
+</li>
+<li><a href="#Subject">https://w3id.org/hto#Subject</a>
+</li>
+</ul></details><details><summary><u>Deleted classes</u></summary>
+<ul><li><a href="#http://schema.org/Book">http://schema.org/Book</a>
+</li>
+<li><a href="#http://schema.org/Collection">http://schema.org/Collection</a>
+</li>
+<li><a href="#http://schema.org/CreativeWork">http://schema.org/CreativeWork</a>
+</li>
+<li><a href="#http://schema.org/Person">http://schema.org/Person</a>
+</li>
+</ul></details><h3 id="changeProp" class="list">Object Properties</h3>
+<details><summary><u>Modified object properties</u></summary>
+<ul><li><a href="#editor">https://w3id.org/hto#editor</a>
+<ul>
+<li>Added: SubProperty of https://schema.org/editor</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of http://schema.org/editor</li>
+</ul>
+</li>
+<li><a href="#endsAtPage">https://w3id.org/hto#endsAtPage</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topObjectProperty</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of https://w3id.org/hto#wasRecordedIn</li>
+</ul>
+</li>
+<li><a href="#hasTextQuality">https://w3id.org/hto#hasTextQuality</a>
+<ul>
+<li>Added: SubProperty of http://www.cidoc-crm.org/cidoc-crm/P2_has_type</li>
+</ul>
+</li>
+<li><a href="#publisher">https://w3id.org/hto#publisher</a>
+<ul>
+<li>Added: SubProperty of https://schema.org/publisher</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of http://schema.org/publisher</li>
+</ul>
+</li>
+<li><a href="#referencedBy">https://w3id.org/hto#referencedBy</a>
+<ul>
+<li>Added: rdfs:comment "a thing was referenced by an entity"@en</li>
+</ul>
+<ul>
+<li>Deleted: rdfs:comment "an entity was refererenced by other entity"@en</li>
+</ul>
+</li>
+<li><a href="#refersTo">https://w3id.org/hto#refersTo</a>
+<ul>
+<li>Added: rdfs:comment "one entity refers to another thing"@en</li>
+</ul>
+<ul>
+<li>Deleted: Range https://w3id.org/hto#EntityWithProvenance</li>
+<li>Deleted: rdfs:comment "one entity refers to other entity."@en</li>
+</ul>
+</li>
+<li><a href="#startsAtPage">https://w3id.org/hto#startsAtPage</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topObjectProperty</li>
+<li>Added: domain Union of (https://schema.org/Article, https://schema.org/PublicationIssue, https://w3id.org/hto#Broadside, https://w3id.org/hto#InternalRecord, https://w3id.org/hto#Volume)</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of https://w3id.org/hto#wasRecordedIn</li>
+<li>Deleted: domain https://w3id.org/hto#InternalRecord</li>
+</ul>
+</li>
+<li><a href="#wasRecordedIn">https://w3id.org/hto#wasRecordedIn</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topObjectProperty</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of http://www.w3.org/ns/prov#wasDerivedFrom</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Added object properties</u></summary>
+<ul><li><a href="#http://www.cidoc-crm.org/cidoc-crm/P138_represents">http://www.cidoc-crm.org/cidoc-crm/P138_represents</a>
+<ul>
+<li>Added: domain http://www.cidoc-crm.org/cidoc-crm/E36_Visual_Item</li>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;http://www.cidoc-crm.org/cidoc-crm/P138_represents&gt; &lt;http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation&gt;)</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation">http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;http://www.cidoc-crm.org/cidoc-crm/P138_represents&gt; &lt;http://www.cidoc-crm.org/cidoc-crm/P138i_has_representation&gt;)</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/P160_has_temporal_projection">http://www.cidoc-crm.org/cidoc-crm/P160_has_temporal_projection</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;http://www.cidoc-crm.org/cidoc-crm/P160_has_temporal_projection&gt; &lt;http://www.cidoc-crm.org/cidoc-crm/P160i_is_temporal_projection_of&gt;)</li>
+<li>Added: Range http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span</li>
+<li>Added: domain http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/P160i_is_temporal_projection_of">http://www.cidoc-crm.org/cidoc-crm/P160i_is_temporal_projection_of</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;http://www.cidoc-crm.org/cidoc-crm/P160_has_temporal_projection&gt; &lt;http://www.cidoc-crm.org/cidoc-crm/P160i_is_temporal_projection_of&gt;)</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/P161_has_spatial_projection">http://www.cidoc-crm.org/cidoc-crm/P161_has_spatial_projection</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;http://www.cidoc-crm.org/cidoc-crm/P161_has_spatial_projection&gt; &lt;http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of&gt;)</li>
+<li>Added: domain http://www.cidoc-crm.org/cidoc-crm/E92_Spacetime_Volume</li>
+<li>Added: Range http://www.cidoc-crm.org/cidoc-crm/E53_Place</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of">http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;http://www.cidoc-crm.org/cidoc-crm/P161_has_spatial_projection&gt; &lt;http://www.cidoc-crm.org/cidoc-crm/P161i_is_spatial_projection_of&gt;)</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/P2_has_type">http://www.cidoc-crm.org/cidoc-crm/P2_has_type</a>
+<ul>
+<li>Added: Range https://w3id.org/hto#Type</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/P89_falls_within">http://www.cidoc-crm.org/cidoc-crm/P89_falls_within</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;http://www.cidoc-crm.org/cidoc-crm/P89_falls_within&gt; &lt;http://www.cidoc-crm.org/cidoc-crm/P89i_contains&gt;)</li>
+<li>Added: Range http://www.cidoc-crm.org/cidoc-crm/E53_Place</li>
+<li>Added: TransitiveObjectProperty TransitiveObjectProperty(&lt;http://www.cidoc-crm.org/cidoc-crm/P89_falls_within&gt;)</li>
+<li>Added: domain http://www.cidoc-crm.org/cidoc-crm/E53_Place</li>
+</ul>
+</li>
+<li><a href="#http://www.cidoc-crm.org/cidoc-crm/P89i_contains">http://www.cidoc-crm.org/cidoc-crm/P89i_contains</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;http://www.cidoc-crm.org/cidoc-crm/P89_falls_within&gt; &lt;http://www.cidoc-crm.org/cidoc-crm/P89i_contains&gt;)</li>
+</ul>
+</li>
+<li><a href="#http://www.opengis.net/ont/geosparql#hasCentroid">http://www.opengis.net/ont/geosparql#hasCentroid</a>
+<ul>
+<li>Added: SubProperty of http://www.opengis.net/ont/geosparql#hasGeometry</li>
+</ul>
+</li>
+<li><a href="#http://www.opengis.net/ont/geosparql#hasGeometry">http://www.opengis.net/ont/geosparql#hasGeometry</a>
+<ul>
+<li>Added: domain http://www.opengis.net/ont/geosparql#Feature</li>
+<li>Added: Range http://www.opengis.net/ont/geosparql#Geometry</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/2004/02/skos/core#broader">http://www.w3.org/2004/02/skos/core#broader</a>
+</li>
+<li><a href="#http://www.w3.org/2004/02/skos/core#narrower">http://www.w3.org/2004/02/skos/core#narrower</a>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#hasBody">http://www.w3.org/ns/oa#hasBody</a>
+<ul>
+<li>Added: domain http://www.w3.org/ns/oa#Annotation</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#hasSelector">http://www.w3.org/ns/oa#hasSelector</a>
+<ul>
+<li>Added: Range http://www.w3.org/ns/oa#Selector</li>
+<li>Added: domain http://www.w3.org/ns/oa#ResourceSelection</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#hasSource">http://www.w3.org/ns/oa#hasSource</a>
+<ul>
+<li>Added: domain http://www.w3.org/ns/oa#ResourceSelection</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#hasTarget">http://www.w3.org/ns/oa#hasTarget</a>
+<ul>
+<li>Added: domain http://www.w3.org/ns/oa#Annotation</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/about">https://schema.org/about</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://schema.org/about&gt; &lt;https://schema.org/subjectOf&gt;)</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/editor">https://schema.org/editor</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topObjectProperty</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/mentions">https://schema.org/mentions</a>
+<ul>
+<li>Added: domain https://schema.org/CreativeWork</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/publisher">https://schema.org/publisher</a>
+</li>
+<li><a href="#https://schema.org/subjectOf">https://schema.org/subjectOf</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://schema.org/about&gt; &lt;https://schema.org/subjectOf&gt;)</li>
+</ul>
+</li>
+<li><a href="#hasAnnotation">https://w3id.org/hto#hasAnnotation</a>
+<ul>
+<li>Added: Range http://www.w3.org/ns/oa#Annotation</li>
+</ul>
+</li>
+<li><a href="#hasLocationType">https://w3id.org/hto#hasLocationType</a>
+<ul>
+<li>Added: domain https://w3id.org/hto#Location</li>
+<li>Added: SubProperty of http://www.cidoc-crm.org/cidoc-crm/P2_has_type</li>
+<li>Added: Range https://w3id.org/hto#LocationType</li>
+</ul>
+</li>
+<li><a href="#hasResourceType">https://w3id.org/hto#hasResourceType</a>
+<ul>
+<li>Added: Range https://w3id.org/hto#ResourceType</li>
+<li>Added: SubProperty of http://www.cidoc-crm.org/cidoc-crm/P2_has_type</li>
+<li>Added: domain http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object</li>
+</ul>
+</li>
+<li><a href="#isAbout">https://w3id.org/hto#isAbout</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/hto#isAbout&gt; &lt;https://w3id.org/hto#isSubjectOf&gt;)</li>
+<li>Added: domain https://w3id.org/hto#Event</li>
+<li>Added: domain https://w3id.org/hto#Work</li>
+<li>Added: SubProperty of https://schema.org/about</li>
+<li>Added: Range https://w3id.org/hto#Concept</li>
+</ul>
+</li>
+<li><a href="#isSubjectOf">https://w3id.org/hto#isSubjectOf</a>
+<ul>
+<li>Added: InverseObjectProperties InverseObjectProperties(&lt;https://w3id.org/hto#isAbout&gt; &lt;https://w3id.org/hto#isSubjectOf&gt;)</li>
+<li>Added: SubProperty of https://schema.org/subjectOf</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Deleted object properties</u></summary>
+<ul><li><a href="#http://schema.org/editor">http://schema.org/editor</a>
+</li>
+<li><a href="#http://schema.org/publisher">http://schema.org/publisher</a>
+</li>
+</ul></details><h3 id="changeDataProp" class="list">Data Properties</h3>
+<details><summary><u>Modified data properties</u></summary>
+<ul><li><a href="#abstract">https://w3id.org/hto#abstract</a>
+<ul>
+<li>Added: SubProperty of https://schema.org/abstract</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of http://schema.org/abstract</li>
+</ul>
+</li>
+<li><a href="#birthYear">https://w3id.org/hto#birthYear</a>
+<ul>
+<li>Added: SubProperty of https://schema.org/birthDate</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of http://schema.org/birthDate</li>
+</ul>
+</li>
+<li><a href="#deathYear">https://w3id.org/hto#deathYear</a>
+<ul>
+<li>Added: SubProperty of https://schema.org/deathDate</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of http://schema.org/deathDate</li>
+</ul>
+</li>
+<li><a href="#genre">https://w3id.org/hto#genre</a>
+<ul>
+<li>Added: SubProperty of https://schema.org/genre</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of http://schema.org/genre</li>
+</ul>
+</li>
+<li><a href="#language">https://w3id.org/hto#language</a>
+<ul>
+<li>Added: SubProperty of https://schema.org/inLanguage</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of http://schema.org/inLanguage</li>
+</ul>
+</li>
+<li><a href="#mmsid">https://w3id.org/hto#mmsid</a>
+<ul>
+<li>Added: SubProperty of https://schema.org/identifier</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of http://schema.org/identifier</li>
+</ul>
+</li>
+<li><a href="#number">https://w3id.org/hto#number</a>
+<ul>
+<li>Added: SubProperty of https://schema.org/identifier</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of http://schema.org/identifier</li>
+</ul>
+</li>
+<li><a href="#volumeId">https://w3id.org/hto#volumeId</a>
+<ul>
+<li>Added: SubProperty of https://schema.org/identifier</li>
+</ul>
+<ul>
+<li>Deleted: SubProperty of http://schema.org/identifier</li>
+</ul>
+</li>
+<li><a href="#yearPublished">https://w3id.org/hto#yearPublished</a>
+<ul>
+<li>Added: SubProperty of https://schema.org/datePublished</li>
+<li>Added: Domain https://schema.org/CreativeWork</li>
+</ul>
+<ul>
+<li>Deleted: Domain http://schema.org/CreativeWork</li>
+<li>Deleted: SubProperty of http://schema.org/datePublished</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Added data properties</u></summary>
+<ul><li><a href="#http://www.opengis.net/ont/geosparql#asGeoJSON">http://www.opengis.net/ont/geosparql#asGeoJSON</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topDataProperty</li>
+<li>Added: Domain http://www.opengis.net/ont/geosparql#Geometry</li>
+<li>Added: Range http://www.opengis.net/ont/geosparql#geoJSONLiteral</li>
+</ul>
+</li>
+<li><a href="#http://www.opengis.net/ont/geosparql#asWKT">http://www.opengis.net/ont/geosparql#asWKT</a>
+<ul>
+<li>Added: Domain http://www.opengis.net/ont/geosparql#Geometry</li>
+<li>Added: Range http://www.opengis.net/ont/geosparql#wktLiteral</li>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topDataProperty</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#end">http://www.w3.org/ns/oa#end</a>
+<ul>
+<li>Added: Range http://www.w3.org/2001/XMLSchema#nonNegativeInteger</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#exact">http://www.w3.org/ns/oa#exact</a>
+<ul>
+<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#prefix">http://www.w3.org/ns/oa#prefix</a>
+<ul>
+<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topDataProperty</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#start">http://www.w3.org/ns/oa#start</a>
+<ul>
+<li>Added: Range http://www.w3.org/2001/XMLSchema#nonNegativeInteger</li>
+</ul>
+</li>
+<li><a href="#http://www.w3.org/ns/oa#suffix">http://www.w3.org/ns/oa#suffix</a>
+<ul>
+<li>Added: Range http://www.w3.org/2001/XMLSchema#string</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/abstract">https://schema.org/abstract</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topDataProperty</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/birthDate">https://schema.org/birthDate</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topDataProperty</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/datePublished">https://schema.org/datePublished</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topDataProperty</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/deathDate">https://schema.org/deathDate</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topDataProperty</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/genre">https://schema.org/genre</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topDataProperty</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/identifier">https://schema.org/identifier</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topDataProperty</li>
+</ul>
+</li>
+<li><a href="#https://schema.org/inLanguage">https://schema.org/inLanguage</a>
+<ul>
+<li>Added: SubProperty of http://www.w3.org/2002/07/owl#topDataProperty</li>
+</ul>
+</li>
+<li><a href="#numberOfPages">https://w3id.org/hto#numberOfPages</a>
+<ul>
+<li>Added: Domain https://w3id.org/hto#Volume</li>
+<li>Added: Range http://www.w3.org/2001/XMLSchema#int</li>
+</ul>
+</li>
+</ul></details><details><summary><u>Deleted data properties</u></summary>
+<ul><li><a href="#http://schema.org/abstract">http://schema.org/abstract</a>
+</li>
+<li><a href="#http://schema.org/birthDate">http://schema.org/birthDate</a>
+</li>
+<li><a href="#http://schema.org/datePublished">http://schema.org/datePublished</a>
+</li>
+<li><a href="#http://schema.org/deathDate">http://schema.org/deathDate</a>
+</li>
+<li><a href="#http://schema.org/genre">http://schema.org/genre</a>
+</li>
+<li><a href="#http://schema.org/identifier">http://schema.org/identifier</a>
+</li>
+<li><a href="#http://schema.org/inLanguage">http://schema.org/inLanguage</a>
+</li>
+</ul></details></div>
