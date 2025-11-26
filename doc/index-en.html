@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/hto","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/hto","name":"Heritage Text Ontology", "headline":"Document describing the ontology https://w3id.org/hto", "dateReleased":"Mon May 19 22:33:00 BST 2025", "version":"1.0.0", "license":"https://opensource.org/licenses/MIT", "author":[{"@type":"Person","name":"Lilin Yu"}], "contributor":[{"@type":"Person","name":"Rosa Filgueira"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/hto","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/hto","name":"Heritage Text Ontology", "headline":"The Heritage Textual Ontology (HTO) is designed to formally represent knowledge in textual heritage. It defines a set of classes, properties, and restrictions for describing the content, metadata, and provenance of digitised historical textual collections. The ontology addresses challenges posed by the heterogeneity and scale of digital archives, enabling these resources to become more Findable, Accessible, Interoperable, and Reusable (FAIR) for both humans and machines. HTO reuses and extends established vocabularies such as CIDOC-CRM for cultural heritage representation, PROV-O for provenance modelling, SKOS for concept description, and GeoSPARQL for spatial information. It supports linking textual content (e.g. articles, abstracts, recognised entities) with associated metadata (e.g. titles, editors, publishers) and provenance records (e.g. digitisation activities, software tools), providing a consistent semantic framework for computational analysis and knowledge graph generation. Note that HTO focuses on the semantic and literal meaning of texts rather than their palaeographic or typographic features; for modelling handwritten or material aspects, refer to CRMtex.", "dateReleased":"Wed Nov 26 12:14:00 GMT 2025", "version":"2.0.0", "license":"https://opensource.org/licenses/MIT", "author":[{"@type":"Person","name":"Lilin Yu","url":"https://orcid.org/0009-0008-1729-083X"}], "contributor":[{"@type":"Person","name":"Angelo A. Salatino","url":"https://www.salatino.org"},{"@type":"Person","name":"Rosa Filgueira","url":"https://orcid.org/0000-0002-5715-3046"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -77,25 +77,28 @@ function loadTOC(){
 
 <dl>
 <dt>This version:</dt>
-<dd><a href="https://w3id.org/hto/1.0.0">https://w3id.org/hto/1.0.0</a></dd>
+<dd><a href="https://w3id.org/hto/2.0.0">https://w3id.org/hto/2.0.0</a></dd>
 <dt>Latest version:</dt>
 <dd><a href="https://w3id.org/hto">https://w3id.org/hto</a></dd>
 <dt>Previous version:</dt>
-<dd><a href="https://w3id.org/hto/0.0.2">https://w3id.org/hto/0.0.2</a></dd>
+<dd><a href="https://w3id.org/hto/1.0.0">https://w3id.org/hto/1.0.0</a></dd>
 <dt>Revision:</dt>
-<dd>1.0.0</dd>
+<dd>2.0.0</dd>
 <dt>Authors:</dt>
-<dd>Lilin Yu</dd>
+<dd><a href="https://orcid.org/0009-0008-1729-083X">Lilin Yu</a></dd>
 
 <dt>Contributors:</dt>
-<dd>Rosa Filgueira</dd>
+<dd><a href="https://www.salatino.org">Angelo A. Salatino</a></dd><dd><a href="https://orcid.org/0000-0002-5715-3046">Rosa Filgueira</a></dd>
+
+<dt>Imported Ontologies:</dt>
+<dd><a href="http://www.cidoc-crm.org/cidoc-crm/">&lt;http://www.cidoc-crm.org/cidoc-crm/&gt;</a></dd><dd><a href="http://www.opengis.net/ont/geosparql">geosparql</a></dd><dd><a href="http://www.w3.org/ns/oa#">oa#</a></dd><dd><a href="http://www.w3.org/ns/org#">org#</a></dd><dd><a href="http://www.w3.org/ns/prov-o#">prov-o#</a></dd>
 
 <dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/License-https://opensource.org/licenses/MIT-blue.svg" alt="https://opensource.org/licenses/MIT" /></a>
 </dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
-<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Lilin Yu. Heritage Text Ontology. Revision: 1.0.0. Retrieved from: https://w3id.org/hto/1.0.0</dd>
-<dt>Compatible with:</dt>
-<dd><a href="https://w3id.org/hto/0.0.2">https://w3id.org/hto/0.0.2</a></dd>
+<dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd><dt>Cite as:</dt>
+<dd>Lilin Yu. Heritage Text Ontology. Revision: 2.0.0. Retrieved from: https://w3id.org/hto/2.0.0</dd>
+<dt>Incompatible with:</dt>
+<dd><a href="https://w3id.org/hto/1.0.0">https://w3id.org/hto/1.0.0</a></dd>
 </dl>
 
 <a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>

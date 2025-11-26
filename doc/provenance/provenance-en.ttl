@@ -2,13 +2,15 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
-<https://w3id.org/hto/1.0.0> a prov:Entity;
+<https://w3id.org/hto/2.0.0> a prov:Entity;
 	 dc:title "Heritage Text Ontology";
-	 prov:wasAttributedTo :agent0;
-	 prov:wasAttributedTo :agent1;
+	 prov:wasAttributedTo <https://orcid.org/0009-0008-1729-083X>;
+	 dc:creator <https://orcid.org/0009-0008-1729-083X>;
+	 prov:wasAttributedTo <https://www.salatino.org>;
+	 dc:contributor <https://www.salatino.org>;
+	 prov:wasAttributedTo <https://orcid.org/0000-0002-5715-3046>;
+	 dc:contributor <https://orcid.org/0000-0002-5715-3046>;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 	 prov:specializationOf <https://w3id.org/hto>;
-	 prov:wasRevisionOf <https://w3id.org/hto/0.0.2>;
+	 prov:wasRevisionOf <https://w3id.org/hto/1.0.0>;
 .
-:agent0 a prov:Agent; foaf:name "Lilin Yu".
-:agent1 a prov:Agent; foaf:name "Rosa Filgueira".
